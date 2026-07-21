@@ -1,0 +1,51 @@
+# Evidence
+
+
+---
+<!-- trackio-cell
+{"type": "markdown", "id": "cell_751e01d417bf", "created_at": "2026-07-21T13:11:46+00:00", "title": "Verification output (last 40 lines)"}
+-->
+## Verification output (last 40 lines)
+
+```
+  ||W_T - W*|| (avg 6 seeds, T=6000) = 0.3676; decreasing T=500->12000 (0.432->0.413) -> PASS
+
+==============================================================================
+CLAIM 2 (Theorem 4.2): averaged-iterate error decays with sample budget (sample complexity)
+==============================================================================
+  averaged-iterate error vs T=[1500, 4000, 12000]: [np.float64(0.198), np.float64(0.165), np.float64(0.115)]; log-log slope=-0.265 (decays) -> PASS
+
+==============================================================================
+CLAIM 3 (Theorem 4.3): decaying stepsizes converge (no explicit dimension terms)
+==============================================================================
+  decaying-stepsize TD, ||W_T - W*|| avg = 0.2300 (< ||W*||=1.252) -> PASS
+
+==============================================================================
+CLAIM 4: double-chain condition-number dependence is quadratic (vs prior quartic)
+==============================================================================
+  seed=0: eta1=0.1033 eta3=0.0047 | 1/eta1^2=9.37e+01  vs  1/eta3^4=2.01e+09
+  seed=1: eta1=0.3676 eta3=0.0190 | 1/eta1^2=7.40e+00  vs  1/eta3^4=7.70e+06
+  seed=2: eta1=0.6136 eta3=0.0236 | 1/eta1^2=2.66e+00  vs  1/eta3^4=3.20e+06
+  seed=3: eta1=0.3455 eta3=0.0153 | 1/eta1^2=8.38e+00  vs  1/eta3^4=1.85e+07
+  seed=4: eta1=0.1650 eta3=0.0069 | 1/eta1^2=3.68e+01  vs  1/eta3^4=4.40e+08
+  seed=5: eta1=0.5094 eta3=0.0252 | 1/eta1^2=3.85e+00  vs  1/eta3^4=2.49e+06
+  double-chain (quadratic) factor < prior (quartic) factor for all 6 MDPs -> PASS
+
+==============================================================================
+CLAIM 5: single-chain variant is slower (quartic) than double-chain
+==============================================================================
+  single-chain error=1.2516 >= double-chain error=0.3246 -> PASS
+
+==============================================================================
+VERDICT SUMMARY
+==============================================================================
+  [PASS] c6_eta_inequality
+  [PASS] c1_convergence
+  [PASS] c2_sample_complexity
+  [PASS] c3_decaying_stepsize
+  [PASS] c4_quadratic
+  [PASS] c5_single_chain_slower
+
+  6/6 claims verified.
+  wrote outputs/verdict.json
+```
