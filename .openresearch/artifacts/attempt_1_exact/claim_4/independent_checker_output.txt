@@ -1,0 +1,5 @@
+returncode=1
+{
+  "passed": false,
+  "reason": "This first-round route deliberately leaves the claim BLOCKED."
+}

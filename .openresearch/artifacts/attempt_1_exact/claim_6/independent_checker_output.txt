@@ -1,0 +1,12 @@
+returncode=1
+Traceback (most recent call last):
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/OpenSearch/local-runs/59aeff21-1b2e-481e-ac04-184cb3ff423d/repo/repro/src/independent_checker.py", line 110, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/OpenSearch/local-runs/59aeff21-1b2e-481e-ac04-184cb3ff423d/repo/repro/src/independent_checker.py", line 91, in main
+    rows = _read_csv(claim_dir / "raw_condition_stress.csv")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dineshjinjala/Documents/AllCode/ICMLPapers/OpenSearch/local-runs/59aeff21-1b2e-481e-ac04-184cb3ff423d/repo/repro/src/independent_checker.py", line 17, in _read_csv
+    {key: float(value) for key, value in row.items()}
+          ^^^^^^^^^^^^
+ValueError: could not convert string to float: 'dense_positive'

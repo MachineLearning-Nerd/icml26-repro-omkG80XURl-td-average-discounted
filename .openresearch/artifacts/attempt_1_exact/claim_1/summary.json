@@ -1,0 +1,19 @@
+{
+  "assessment": "The exact T exponent and deterministic fixed point are resolved, but the fitted eta exponent is -1.627, outside the preregistered quadratic-identification band. The observed dependence is faster than the theorem's upper envelope, which does not identify the claimed worst-case exponent.",
+  "checks": {
+    "T_exponent_in_minus_one_band": true,
+    "eta_exponent_in_minus_two_band": false,
+    "largest_budget_mean_within_0_02_of_unique_root": true,
+    "moment_mass_conserved": true,
+    "regression_r_squared_at_least_0_98": true
+  },
+  "independent_checker_returncode": 1,
+  "regression": {
+    "T_exponent": -1.003249236202161,
+    "eta_exponent": -1.6273720360555501,
+    "intercept": 2.030243528885502,
+    "r_squared": 0.9981697279999678,
+    "residual_sum_squares": 0.028828403779956758
+  },
+  "verdict": "BLOCKED"
+}

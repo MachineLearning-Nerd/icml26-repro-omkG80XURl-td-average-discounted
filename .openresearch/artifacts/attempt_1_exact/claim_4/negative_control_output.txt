@@ -1,0 +1,3 @@
+Injected failure: first contract check forced false.
+returncode=1
+{"checks": {"prior_algorithms_implemented_under_matched_contract": false, "proposed_method_quadratic_envelope_measured": false}, "failed": ["prior_algorithms_implemented_under_matched_contract", "proposed_method_quadratic_envelope_measured"], "verdict": "BLOCKED"}

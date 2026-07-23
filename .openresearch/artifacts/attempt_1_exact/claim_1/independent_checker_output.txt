@@ -1,0 +1,8 @@
+returncode=1
+{
+  "passed": false,
+  "recomputed_regression": {
+    "T_exponent": -1.003249236202161,
+    "eta_exponent": -1.6273720360555501
+  }
+}

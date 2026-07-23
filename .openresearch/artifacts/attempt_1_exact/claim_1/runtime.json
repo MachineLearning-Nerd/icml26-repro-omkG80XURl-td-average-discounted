@@ -1,0 +1,6 @@
+{
+  "backend": "local CPU",
+  "gpu_used": false,
+  "logical_cpus_visible": 8,
+  "route_runtime_seconds": 0.01131258299574256
+}

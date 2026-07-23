@@ -1,0 +1,9 @@
+{
+  "assessment": "The paper's conditional exponent arithmetic is reproducible, but actual Eq. (17) sample complexity has not yet been measured across an eta'=Theta(eta) family. One small error comparison is not reused.",
+  "checks": {
+    "conditional_quartic_exponent_arithmetic_reproduced": true,
+    "single_chain_sample_complexity_measured_on_common_regime_family": false
+  },
+  "independent_checker_returncode": 1,
+  "verdict": "BLOCKED"
+}

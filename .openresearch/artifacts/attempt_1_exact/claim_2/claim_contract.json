@@ -1,0 +1,25 @@
+{
+  "allowed_verdicts": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "assumptions": [
+    "finite-state fixed-policy evaluation",
+    "irreducible and aperiodic induced chain",
+    "full-column-rank normalized features",
+    "stationary sampling where required",
+    "paper-prescribed step-size regime"
+  ],
+  "claim": 2,
+  "machine_checks": [
+    "mixing_adjusted_T_exponent_in_minus_one_band",
+    "all_per_eta_T_exponents_in_band",
+    "all_horizons_exceed_mixing_time",
+    "all_stepsizes_obey_eta_over_18",
+    "moment_mass_conserved_with_matrix_power_roundoff_tolerance"
+  ],
+  "paper_statement": "Under Assumption 2.1, two independent stationary Markov chains, the stated constant-step restriction, and T>=tau_mix, the double-chain last iterate has a tilde-O(1/T) bound and tilde-O(epsilon^-1 eta^-2) sample complexity, with the explicit mixing factor retained.",
+  "source_sha256": "2d40f7e54ced7ee48f9b336f2928e081e679293122d09d09e9fe681a6601a9d9",
+  "source_url": "https://ar5iv.labs.arxiv.org/html/2605.02103#S4.Thmtheorem2"
+}

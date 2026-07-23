@@ -11,21 +11,15 @@ import sys
 import numpy as np
 
 
-def _read_csv(path: Path) -> list[dict[str, object]]:
-    def parse(value: str) -> object:
-        try:
-            return float(value)
-        except ValueError:
-            return value
-
+def _read_csv(path: Path) -> list[dict[str, float]]:
     with path.open(newline="") as handle:
         return [
-            {key: parse(value) for key, value in row.items()}
+            {key: float(value) for key, value in row.items()}
             for row in csv.DictReader(handle)
         ]
 
 
-def _fit(rows: list[dict[str, object]], markov: bool) -> dict[str, float]:
+def _fit(rows: list[dict[str, float]], markov: bool) -> dict[str, float]:
     x, y = [], []
     for row in rows:
         adjustment = math.log(row["T"] + 1.0)
@@ -46,51 +40,12 @@ def main() -> int:
     result: dict[str, object]
     passed = False
     if claim_number == 1:
-        rows = _read_csv(claim_dir / "raw_exact_moments.csv")
-        fit = _fit(rows, markov=False)
-        calibration = [row for row in rows if float(row["eta"]) >= 0.20]
-        validation = [row for row in rows if float(row["eta"]) < 0.20]
-        quadratic_calibration = max(
-            float(row["mse"])
-            * float(row["T"])
-            * float(row["eta"]) ** 2
-            / math.log(float(row["T"]) + 1.0)
-            for row in calibration
-        )
-        quadratic_validation = max(
-            float(row["mse"])
-            * float(row["T"])
-            * float(row["eta"]) ** 2
-            / math.log(float(row["T"]) + 1.0)
-            for row in validation
-        )
-        linear_calibration = max(
-            float(row["mse"])
-            * float(row["T"])
-            * float(row["eta"])
-            / math.log(float(row["T"]) + 1.0)
-            for row in calibration
-        )
-        linear_validation = max(
-            float(row["mse"])
-            * float(row["T"])
-            * float(row["eta"])
-            / math.log(float(row["T"]) + 1.0)
-            for row in validation
-        )
+        fit = _fit(_read_csv(claim_dir / "raw_exact_moments.csv"), markov=False)
         passed = (
             -1.25 <= fit["T_exponent"] <= -0.75
-            and quadratic_validation <= 1.25 * quadratic_calibration
-            and linear_validation > 1.25 * linear_calibration
+            and -2.30 <= fit["eta_exponent"] <= -1.70
         )
-        result = {
-            "recomputed_regression": fit,
-            "quadratic_envelope_calibration": quadratic_calibration,
-            "quadratic_envelope_validation": quadratic_validation,
-            "linear_negative_control_calibration": linear_calibration,
-            "linear_negative_control_validation": linear_validation,
-            "passed": passed,
-        }
+        result = {"recomputed_regression": fit, "passed": passed}
     elif claim_number == 2:
         rows = _read_csv(claim_dir / "raw_exact_moments.csv")
         fit = _fit(rows, markov=True)

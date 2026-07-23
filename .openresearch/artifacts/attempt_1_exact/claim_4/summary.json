@@ -1,0 +1,9 @@
+{
+  "assessment": "The proposed method's quadratic envelope is directly measured, but this route does not yet reproduce the cited quartic prior algorithms under matched definitions. Arithmetic comparison alone would repeat the judge-identified flaw.",
+  "checks": {
+    "prior_algorithms_implemented_under_matched_contract": false,
+    "proposed_method_quadratic_envelope_measured": false
+  },
+  "independent_checker_returncode": 1,
+  "verdict": "BLOCKED"
+}
