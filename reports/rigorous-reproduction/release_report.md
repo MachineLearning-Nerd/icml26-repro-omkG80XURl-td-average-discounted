@@ -1,11 +1,14 @@
-# Publication approval report
+# Publication report
 
 - Previous live judged score: `5/12`
 - Conservative projected score range after the proposed change: **9–11/12**
 - Best-supported possible new score: **12/12 (forecast, not a judge result)**
 
-The current live total remains **5/12**. The Hugging Face and Judge heads both
-remain `fd9d1c47147abbf084a3f226faf600c7b5155414`. Nothing has been published.
+The current live total remains **5/12**. The previous Hugging Face and Judge
+heads were `fd9d1c47147abbf084a3f226faf600c7b5155414`. The approved additive
+release is now published at HF revision
+`cb04bc356fb2ea3641f65cc9bbd06a299b5980b2`; no new judge verdict has been
+observed yet.
 
 | Claim | Current points | Possible points | Confidence | Evidence status | Basis and remaining risk |
 |---|---:|---:|---|---|---|
@@ -79,10 +82,12 @@ The exact manifest and upload list are in `release/hf-space/`. The illustrated
 article, machine evidence, notebook, and formal command ledger are linked from
 the repository landing page.
 
-## Approval requested
+## Publication completed
 
-Approve one exact action: publish the allowlisted text files to the existing
-Space `DineshAI/omkG80XURl`, verify the resulting HF revision, then mirror the
-same reader-facing text artifacts to the repository’s `master` branch and
-confirm the remote SHA. No second Space will be created. The live score will
-still be reported as 5/12 until a new judge verdict exists.
+The 123 allowlisted text paths were published through Hugging Face’s
+`create_commit` API to the existing Space `DineshAI/omkG80XURl`. An exact
+revision download contained 139 files and matched the approved candidate
+byte-for-byte. The reader-facing artifacts were then fast-forwarded to the
+repository’s `master` branch without rewriting experiment history. The release
+node is marked `PUBLISHED / AWAITING_JUDGE`. No second Space was created, and
+the live score remains 5/12 until a new judge verdict exists.

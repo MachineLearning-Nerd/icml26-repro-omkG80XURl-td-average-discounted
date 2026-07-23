@@ -105,3 +105,30 @@ Additional read-only checks validated every candidate JSON file with `jq`,
 rendered every report SVG for visual inspection, counted and hashed the old and
 new trees, confirmed the 17-path subset, and scanned the repository and
 candidate for common token/private-key patterns without printing values.
+
+## Publication
+
+```bash
+hf auth whoami
+hf spaces info DineshAI/omkG80XURl --expand sha --format json
+hf upload DineshAI/omkG80XURl <exact-allowlist-stage> . --type space
+```
+
+The CLI upload stopped before creating a commit because its repository-create
+preflight received HTTP 402. The Space remained at the judged revision. The
+release then used `huggingface_hub.HfApi.create_commit` directly with 123
+`CommitOperationAdd` objects, no delete operations, and the judged revision as
+`parent_commit`. The resulting revision was
+`cb04bc356fb2ea3641f65cc9bbd06a299b5980b2`.
+
+```bash
+hf download DineshAI/omkG80XURl --type space --revision cb04bc356fb2ea3641f65cc9bbd06a299b5980b2 --local-dir <fresh-verification-directory>
+git -C <canonical-repository> merge --ff-only origin/orx/release-candidate-evidence-report-and-logbook
+git -C <canonical-repository> push origin master
+git ls-remote origin refs/heads/master
+```
+
+The downloaded 139-file Space tree matched the approved candidate exactly.
+GitHub `master` was first confirmed at the release SHA; a subsequent
+presentation-only commit records the final published revision and
+awaiting-judge status.
