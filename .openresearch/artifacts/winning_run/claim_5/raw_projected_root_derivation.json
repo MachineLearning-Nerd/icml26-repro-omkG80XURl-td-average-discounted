@@ -1,0 +1,9 @@
+{
+  "delta": 0.25,
+  "dirichlet_coefficient_times_scale_squared": 0.125,
+  "family": "two-state symmetric Markov chain with phi=(0,scale)",
+  "mean_feature_squared_coefficient_times_scale_squared": 0.25,
+  "mean_field_equation": "Dirichlet*reward_parameter - (Dirichlet + mean_feature_squared)*theta = 0",
+  "projected_theta_star": 0.3333333333333333,
+  "reward_parameter": 1.0
+}

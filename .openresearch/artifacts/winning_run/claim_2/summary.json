@@ -1,0 +1,30 @@
+{
+  "assessment": "A conditional-state moment operator exactly propagates two independent stationary Markov chains. After retaining the theorem's explicit mixing factor, the last-iterate error follows the stated tilde-O(1/T) envelope across all controlled eta values.",
+  "checks": {
+    "all_horizons_exceed_mixing_time": true,
+    "all_per_eta_T_exponents_in_band": true,
+    "all_stepsizes_obey_eta_over_18": true,
+    "mixing_adjusted_T_exponent_in_minus_one_band": true,
+    "moment_mass_conserved_with_matrix_power_roundoff_tolerance": true,
+    "paper_scale_markov_final_error_below_initial_and_early_checkpoint": true,
+    "paper_scale_markov_includes_n1000_d100": true,
+    "paper_scale_zero_reward_control_is_worse": true
+  },
+  "independent_checker_returncode": 0,
+  "per_eta_T_exponents": {
+    "0.07": -1.3077872836079514,
+    "0.1": -1.2490233372821018,
+    "0.14": -1.21052581403863,
+    "0.2": -1.1720410048306247,
+    "0.28": -1.176968427965669,
+    "0.4": -1.1693901165582377
+  },
+  "regression": {
+    "T_exponent": -1.2142893592655737,
+    "eta_exponent": -2.0050632055647117,
+    "intercept": 1.0018910365765847,
+    "r_squared": 0.9907843942961291,
+    "residual_sum_squares": 0.21177758764375604
+  },
+  "verdict": "VERIFIED"
+}

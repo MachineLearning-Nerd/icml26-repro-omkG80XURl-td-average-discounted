@@ -1,0 +1,6 @@
+returncode=0
+{
+  "formulas_with_explicit_d": [],
+  "paper_scale_passed": true,
+  "passed": true
+}

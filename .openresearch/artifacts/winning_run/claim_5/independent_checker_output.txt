@@ -1,0 +1,38 @@
+returncode=0
+{
+  "algorithm_control_mse": 0.44543473508861875,
+  "cubic_negative_calibration": 0.013778465860523814,
+  "cubic_negative_validation": 0.002213781755830676,
+  "dependency_graph_valid": true,
+  "eta_prime_over_eta_range": [
+    1.3333333333333333,
+    1.3333333333333335
+  ],
+  "negative_dependency_graph_rejected": true,
+  "passed": true,
+  "per_eta_T_exponents": {
+    "0.09": -0.4719007913357386,
+    "0.12": -0.29914904911274254,
+    "0.16": -0.03226716313878719,
+    "0.22": -0.4726406011716419,
+    "0.3": -1.1201490045608629
+  },
+  "projected_root_valid": true,
+  "quartic_calibration": 0.004133539758157144,
+  "quartic_validation": 0.00026565381069968113,
+  "recomputed_G_const_exponents": [
+    -1.0,
+    -1.0,
+    0.0
+  ],
+  "recomputed_common_regime_exponents": [
+    -4.0,
+    -1.0
+  ],
+  "recomputed_steady_state_exponents": [
+    -1.0,
+    -3.0,
+    -1.0
+  ],
+  "target_mse": 4.215417719396992e-05
+}

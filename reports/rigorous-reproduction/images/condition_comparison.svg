@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img">
+<title>Quadratic average-reward dependence matches discounted TD</title>
+<rect width="900" height="500" fill="#ffffff" rx="18"/>
+<text x="52" y="52" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="700" fill="#172033">Quadratic average-reward dependence matches discounted TD</text>
+<text x="52" y="78" font-family="Inter,Arial,sans-serif" font-size="14" fill="#64748b">New theorem and SHA-pinned primary-source denominator audit</text>
+<line x1="135" y1="400.0" x2="805" y2="400.0" stroke="#dbe3ee"/>
+<text x="121.0" y="405.0" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b">0</text>
+<line x1="135" y1="330.0" x2="805" y2="330.0" stroke="#dbe3ee"/>
+<text x="121.0" y="335.0" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b">1</text>
+<line x1="135" y1="260.0" x2="805" y2="260.0" stroke="#dbe3ee"/>
+<text x="121.0" y="265.0" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b">2</text>
+<line x1="135" y1="190.0" x2="805" y2="190.0" stroke="#dbe3ee"/>
+<text x="121.0" y="195.0" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b">3</text>
+<line x1="135" y1="120.0" x2="805" y2="120.0" stroke="#dbe3ee"/>
+<text x="121.0" y="125.0" text-anchor="end" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b">4</text>
+<rect x="180" y="260.0" width="90" height="140.0" rx="10" fill="#2563eb"/>
+<text x="225.0" y="248.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#2563eb">inverse power 2</text>
+<text x="225.0" y="428.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#172033">new average</text>
+<rect x="390" y="120.0" width="90" height="280.0" rx="10" fill="#dc2626"/>
+<text x="435.0" y="108.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#dc2626">inverse power 4</text>
+<text x="435.0" y="428.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#172033">prior average</text>
+<rect x="600" y="260.0" width="90" height="140.0" rx="10" fill="#0f9f8f"/>
+<text x="645.0" y="248.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#0f9f8f">inverse power 2</text>
+<text x="645.0" y="428.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="600" fill="#172033">discounted</text>
+<text x="450.0" y="458.0" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="400" fill="#64748b">Primary sources use distinct condition-number definitions; bars compare powers, not raw values.</text>
+</svg>

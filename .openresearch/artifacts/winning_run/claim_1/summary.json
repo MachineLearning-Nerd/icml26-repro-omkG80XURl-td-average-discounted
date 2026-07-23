@@ -1,0 +1,29 @@
+{
+  "assessment": "Exact moment propagation converges to the deterministic root. A quadratic tilde-O envelope calibrated on eta>=0.20 holds on strictly smaller held-out eta values without refitting, while the eta^-1 negative-control envelope is rejected.",
+  "checks": {
+    "T_exponent_in_minus_one_band": true,
+    "eta_inverse_one_negative_control_rejected": true,
+    "largest_budget_mean_within_0_02_of_unique_root": true,
+    "moment_mass_conserved": true,
+    "paper_scale_iid_final_error_below_initial_and_early_checkpoint": true,
+    "paper_scale_iid_includes_n1000_d100": true,
+    "quadratic_upper_envelope_holds_on_smaller_eta_holdout": true,
+    "regression_r_squared_at_least_0_98": true
+  },
+  "independent_checker_returncode": 0,
+  "regression": {
+    "T_exponent": -1.003230867828116,
+    "eta_exponent": -1.6957041853441617,
+    "intercept": 1.9238240466705976,
+    "r_squared": 0.9952711033277358,
+    "residual_sum_squares": 0.1011882832809354
+  },
+  "upper_envelope_route": {
+    "holdout_multiplier": 1.25,
+    "linear_negative_control_calibration_max": 19.403019645188326,
+    "linear_negative_control_validation_max": 72.8575521560897,
+    "quadratic_calibration_max": 5.499058410466464,
+    "quadratic_validation_max": 3.3960005756808704
+  },
+  "verdict": "VERIFIED"
+}

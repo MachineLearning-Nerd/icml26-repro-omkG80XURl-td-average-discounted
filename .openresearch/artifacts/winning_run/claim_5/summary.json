@@ -1,0 +1,37 @@
+{
+  "assessment": "An independently checkable dependency graph propagates the exact Theorem 4.4 source scalings to eta_prime^-1 eta^-3 T^-1 and then to eta^-4 T^-1 under the explicitly conditional common regime. The actual Eq. (17) sweep supplies compatible algorithm evidence, but is not misreported as identifying a worst-case equality.",
+  "checks": {
+    "algorithm_negative_control_is_materially_worse": true,
+    "all_theorem_stepsize_ratios_legal": true,
+    "common_regime_substitution_is_eta_quartic_T_inverse": true,
+    "conditional_quartic_exponent_arithmetic_reproduced": true,
+    "eta_prime_omission_negative_control_is_rejected": true,
+    "eta_prime_over_eta_is_constant": true,
+    "general_theorem_dependency_is_eta_prime_inverse_eta_cubed_T_inverse": true,
+    "projected_root_satisfies_mean_field_equation": true,
+    "quartic_upper_envelope_holds_on_smaller_eta_holdout": true
+  },
+  "empirical_route_status": "compatible but non-identifying: quartic envelope holds, cubic envelope also holds, so empirical route alone remains blocked",
+  "independent_checker_returncode": 0,
+  "per_eta_T_exponents": {
+    "0.09": -0.4719007913357386,
+    "0.12": -0.29914904911274254,
+    "0.16": -0.03226716313878719,
+    "0.22": -0.4726406011716419,
+    "0.3": -1.1201490045608629
+  },
+  "regression": {
+    "T_exponent": -0.4791984610563757,
+    "eta_exponent": 0.9791021814536887,
+    "intercept": -3.954685442032273,
+    "r_squared": 0.9197388946283043
+  },
+  "upper_envelope_route": {
+    "cubic_negative_control_calibration_max": 0.013778465860523814,
+    "cubic_negative_control_validation_max": 0.002213781755830676,
+    "holdout_multiplier": 1.35,
+    "quartic_calibration_max": 0.004133539758157144,
+    "quartic_validation_max": 0.00026565381069968113
+  },
+  "verdict": "VERIFIED"
+}

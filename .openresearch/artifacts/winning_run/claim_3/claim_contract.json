@@ -1,0 +1,26 @@
+{
+  "allowed_verdicts": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "assumptions": [
+    "finite-state fixed-policy evaluation",
+    "irreducible and aperiodic induced chain",
+    "full-column-rank normalized features",
+    "stationary sampling where required",
+    "paper-prescribed step-size regime"
+  ],
+  "claim": 3,
+  "machine_checks": [
+    "no_explicit_d_in_theorem_4_3_xi_1",
+    "no_explicit_d_in_theorem_4_3_xi_open_interval",
+    "no_explicit_d_in_full_theorem_D_1",
+    "negative_control_with_explicit_d_is_rejected",
+    "no_unexpected_forbidden_formula",
+    "same_decaying_schedule_converges_at_all_paper_scale_dimensions"
+  ],
+  "paper_statement": "For alpha_t=a/(t+c0)^xi, xi in (0,1], sufficiently large c0, and T>=tau_mix, Theorem 4.3 has no explicit dimension factor; dimension may enter only through norms and condition quantities.",
+  "source_sha256": "2d40f7e54ced7ee48f9b336f2928e081e679293122d09d09e9fe681a6601a9d9",
+  "source_url": "https://ar5iv.labs.arxiv.org/html/2605.02103#S4.Thmtheorem3"
+}

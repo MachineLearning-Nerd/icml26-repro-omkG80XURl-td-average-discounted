@@ -1,0 +1,13 @@
+returncode=0
+{
+  "linear_negative_control_calibration": 19.403019645188326,
+  "linear_negative_control_validation": 72.8575521560897,
+  "paper_scale_passed": true,
+  "passed": true,
+  "quadratic_envelope_calibration": 5.499058410466465,
+  "quadratic_envelope_validation": 3.3960005756808704,
+  "recomputed_regression": {
+    "T_exponent": -1.003230867828116,
+    "eta_exponent": -1.6957041853441617
+  }
+}

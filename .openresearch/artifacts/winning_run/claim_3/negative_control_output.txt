@@ -1,0 +1,3 @@
+Injected failure: first contract check forced false.
+returncode=1
+{"checks": {"negative_control_with_explicit_d_is_rejected": true, "no_explicit_d_in_full_theorem_D_1": true, "no_explicit_d_in_theorem_4_3_xi_1": false, "no_explicit_d_in_theorem_4_3_xi_open_interval": true, "no_unexpected_forbidden_formula": true, "same_decaying_schedule_converges_at_all_paper_scale_dimensions": true}, "failed": ["no_explicit_d_in_theorem_4_3_xi_1"], "verdict": "VERIFIED"}
