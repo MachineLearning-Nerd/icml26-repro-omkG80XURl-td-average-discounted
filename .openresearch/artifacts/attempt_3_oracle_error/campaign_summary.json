@@ -1,0 +1,13 @@
+{
+  "claims": {
+    "1": "VERIFIED",
+    "2": "VERIFIED",
+    "3": "VERIFIED",
+    "4": "VERIFIED",
+    "5": "BLOCKED",
+    "6": "VERIFIED"
+  },
+  "command": "uv run --frozen python repro/src/verify_td.py",
+  "git_sha": "03fbf600a84be7c073ffbc7e6cf0da0e35b4528a",
+  "runtime_seconds": 98.01630495802965
+}

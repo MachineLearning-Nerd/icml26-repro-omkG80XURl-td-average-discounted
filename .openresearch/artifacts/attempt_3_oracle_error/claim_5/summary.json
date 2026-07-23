@@ -1,0 +1,34 @@
+{
+  "assessment": "The actual Eq. (17) common-regime sweep completed, but at least one preregistered inverse-time, held-out upper-envelope, stricter negative-control, or algorithm-control check failed. The route is retained without upgrading the claim.",
+  "checks": {
+    "algorithm_negative_control_is_materially_worse": false,
+    "all_per_eta_T_exponents_show_inverse_time_decay": false,
+    "all_theorem_stepsize_ratios_legal": true,
+    "conditional_quartic_exponent_arithmetic_reproduced": true,
+    "eta_inverse_three_negative_control_rejected": true,
+    "eta_prime_over_eta_is_constant": true,
+    "quartic_upper_envelope_holds_on_smaller_eta_holdout": true
+  },
+  "independent_checker_returncode": 1,
+  "per_eta_T_exponents": {
+    "0.09": -0.0826171970001251,
+    "0.12": -0.09067182557111217,
+    "0.16": -0.10520039896860672,
+    "0.22": -0.14960323302742268,
+    "0.3": -0.236838947675024
+  },
+  "regression": {
+    "T_exponent": -0.1329804981785701,
+    "eta_exponent": -0.049151402458456006,
+    "intercept": -1.8383391143124932,
+    "r_squared": 0.9426854150537034
+  },
+  "upper_envelope_route": {
+    "cubic_negative_control_calibration_max": 8.275594077969208,
+    "cubic_negative_control_validation_max": 12.112601633957395,
+    "holdout_multiplier": 1.35,
+    "quartic_calibration_max": 1.738560427731975,
+    "quartic_validation_max": 1.1982070947665793
+  },
+  "verdict": "BLOCKED"
+}

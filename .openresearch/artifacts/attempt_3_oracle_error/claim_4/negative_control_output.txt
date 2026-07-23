@@ -1,0 +1,3 @@
+Injected failure: first contract check forced false.
+returncode=1
+{"checks": {"condition_number_definitions_are_not_collapsed": true, "discounted_primary_source_is_quadratic": true, "new_average_reward_bound_is_quadratic": true, "prior_average_reward_primary_source_is_quartic": true, "proposed_quadratic_upper_envelope_measured": false}, "failed": ["proposed_quadratic_upper_envelope_measured"], "verdict": "VERIFIED"}

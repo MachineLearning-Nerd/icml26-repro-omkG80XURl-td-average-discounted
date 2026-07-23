@@ -1,0 +1,3 @@
+Injected failure: first contract check forced false.
+returncode=1
+{"checks": {"algorithm_negative_control_is_materially_worse": false, "all_per_eta_T_exponents_show_inverse_time_decay": false, "all_theorem_stepsize_ratios_legal": true, "conditional_quartic_exponent_arithmetic_reproduced": false, "eta_inverse_three_negative_control_rejected": true, "eta_prime_over_eta_is_constant": true, "quartic_upper_envelope_holds_on_smaller_eta_holdout": true}, "failed": ["algorithm_negative_control_is_materially_worse", "all_per_eta_T_exponents_show_inverse_time_decay", "conditional_quartic_exponent_arithmetic_reproduced"], "verdict": "BLOCKED"}

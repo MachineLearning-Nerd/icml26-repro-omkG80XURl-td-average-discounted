@@ -1,0 +1,21 @@
+returncode=1
+{
+  "algorithm_control_mse": 0.00014904720193489285,
+  "cubic_negative_calibration": 8.275594077969208,
+  "cubic_negative_validation": 12.112601633957395,
+  "eta_prime_over_eta_range": [
+    1.3333333333333333,
+    1.3333333333333335
+  ],
+  "passed": false,
+  "per_eta_T_exponents": {
+    "0.09": -0.0826171970001251,
+    "0.12": -0.09067182557111217,
+    "0.16": -0.10520039896860672,
+    "0.22": -0.14960323302742268,
+    "0.3": -0.236838947675024
+  },
+  "quartic_calibration": 1.738560427731975,
+  "quartic_validation": 1.1982070947665793,
+  "target_mse": 0.4461887961786992
+}

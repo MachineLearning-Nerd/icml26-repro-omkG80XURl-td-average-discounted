@@ -905,6 +905,22 @@ def run() -> int:
     }
     write_json(claim5_dir / "raw_exponent_arithmetic.json", exponent_arithmetic)
     single_rows, single_controls = single_chain_rows()
+    projected_root_derivation = {
+        "family": "two-state symmetric Markov chain with phi=(0,scale)",
+        "reward_parameter": 1.0,
+        "mean_field_equation": (
+            "Dirichlet*reward_parameter - "
+            "(Dirichlet + mean_feature_squared)*theta = 0"
+        ),
+        "delta": 0.25,
+        "dirichlet_coefficient_times_scale_squared": 0.125,
+        "mean_feature_squared_coefficient_times_scale_squared": 0.25,
+        "projected_theta_star": 1.0 / 3.0,
+    }
+    write_json(
+        claim5_dir / "raw_projected_root_derivation.json",
+        projected_root_derivation,
+    )
     write_csv(claim5_dir / "raw_single_chain.csv", single_rows)
     write_csv(
         claim5_dir / "raw_single_chain_algorithm_negative_control.csv",
@@ -974,6 +990,14 @@ def run() -> int:
             )
             - min(float(row["eta_prime_over_eta"]) for row in single_rows)
             <= 1e-12,
+            "projected_root_satisfies_mean_field_equation": max(
+                abs(float(row["projected_root_residual"])) for row in single_rows
+            )
+            <= 1e-14
+            and all(
+                abs(float(row["target_theta"]) - 1.0 / 3.0) <= 1e-14
+                for row in single_rows
+            ),
             "all_theorem_stepsize_ratios_legal": all(
                 float(row["rho0"]) <= 1.0
                 and float(row["alpha"]) < 1.0 / (2.0 * float(row["zeta"]))

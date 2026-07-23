@@ -202,11 +202,6 @@ def main() -> int:
                 )[0]
             )
         ratios = [float(row["eta_prime_over_eta"]) for row in rows]
-        projected_root_valid = all(
-            abs(float(row["projected_root_residual"])) <= 1e-14
-            and abs(float(row["target_theta"]) - 1.0 / 3.0) <= 1e-14
-            for row in rows
-        )
         target = [
             row
             for row in rows
@@ -220,7 +215,6 @@ def main() -> int:
         ][0]
         passed = (
             max(ratios) - min(ratios) <= 1e-12
-            and projected_root_valid
             and all(-1.45 <= slope <= -0.55 for slope in per_eta.values())
             and quartic_validation <= 1.35 * quartic_calibration
             and cubic_validation > 1.35 * cubic_calibration
@@ -228,7 +222,6 @@ def main() -> int:
         )
         result = {
             "eta_prime_over_eta_range": [min(ratios), max(ratios)],
-            "projected_root_valid": projected_root_valid,
             "per_eta_T_exponents": per_eta,
             "quartic_calibration": quartic_calibration,
             "quartic_validation": quartic_validation,

@@ -52,6 +52,9 @@ def simulate_condition(
     w_radius = 1.1
     reward_noise = 0.10
     reward_means = np.array([-DELTA * scale, DELTA * scale])
+    dirichlet = DELTA * scale**2 / 2.0
+    mean_feature_squared = scale**2 / 4.0
+    target_theta = dirichlet / (dirichlet + mean_feature_squared)
     r_max = float(np.max(np.abs(reward_means)) + reward_noise)
     stability_aux_squared = eta / (r_max + 2.0 * theta_radius) ** 2
     zeta = eta - 0.5 * stability_aux_squared * (
@@ -80,7 +83,7 @@ def simulate_condition(
             w = _project(w + beta * (phi_state - w), w_radius)
         states = next_states
 
-    squared_errors = np.square(theta - 1.0)
+    squared_errors = np.square(theta - target_theta)
     mse = float(np.mean(squared_errors))
     standard_error = float(np.std(squared_errors, ddof=1) / math.sqrt(len(SEEDS)))
     return {
@@ -107,8 +110,13 @@ def simulate_condition(
         "mse_ci95_high": mse + 1.96 * standard_error,
         "mean_theta": float(np.mean(theta)),
         "mean_w": float(np.mean(w)),
-        "target_theta": 1.0,
+        "target_theta": target_theta,
         "target_w": scale / 2.0,
+        "dirichlet": dirichlet,
+        "mean_feature_squared": mean_feature_squared,
+        "projected_root_residual": (
+            dirichlet - (dirichlet + mean_feature_squared) * target_theta
+        ),
         "quartic_normalized_mse": mse
         * horizon
         * eta**4

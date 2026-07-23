@@ -1,0 +1,14 @@
+{
+  "assessment": "Every algebraic step responsible for the factor 1/2 is checked, the exact inequality holds across diverse and paper-scale cases, and a tight tabular case rejects the stronger 1.1*eta3 control.",
+  "case_count": 48,
+  "checks": {
+    "all_proof_steps_pass": true,
+    "all_systematic_cases_satisfy_half_bound": true,
+    "includes_nonreversible_positive_chains": true,
+    "includes_paper_scale_n1000_d100": true,
+    "stronger_1_1_negative_control_fails_on_tight_case": true
+  },
+  "independent_checker_returncode": 0,
+  "minimum_margin": 4.114739790742386e-07,
+  "verdict": "VERIFIED"
+}
