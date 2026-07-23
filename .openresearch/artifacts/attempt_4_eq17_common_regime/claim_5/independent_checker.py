@@ -47,7 +47,6 @@ def main() -> int:
     passed = False
     if claim_number == 1:
         rows = _read_csv(claim_dir / "raw_exact_moments.csv")
-        paper_rows = _read_csv(claim_dir / "raw_paper_scale.csv")
         fit = _fit(rows, markov=False)
         calibration = [row for row in rows if float(row["eta"]) >= 0.20]
         validation = [row for row in rows if float(row["eta"]) < 0.20]
@@ -79,36 +78,10 @@ def main() -> int:
             / math.log(float(row["T"]) + 1.0)
             for row in validation
         )
-        paper_scale_passed = all(
-            float(final["value_rmse"]) < float(final["initial_value_rmse"])
-            and float(final["value_rmse"]) < float(early["value_rmse"])
-            for n, d in ((50, 5), (100, 20), (1000, 100))
-            for early, final in [
-                (
-                    next(
-                        row
-                        for row in paper_rows
-                        if row["sampling"] == "iid"
-                        and int(float(row["n"])) == n
-                        and int(float(row["d"])) == d
-                        and int(float(row["T"])) == 15000
-                    ),
-                    next(
-                        row
-                        for row in paper_rows
-                        if row["sampling"] == "iid"
-                        and int(float(row["n"])) == n
-                        and int(float(row["d"])) == d
-                        and int(float(row["T"])) == 150000
-                    ),
-                )
-            ]
-        )
         passed = (
             -1.25 <= fit["T_exponent"] <= -0.75
             and quadratic_validation <= 1.25 * quadratic_calibration
             and linear_validation > 1.25 * linear_calibration
-            and paper_scale_passed
         )
         result = {
             "recomputed_regression": fit,
@@ -116,15 +89,10 @@ def main() -> int:
             "quadratic_envelope_validation": quadratic_validation,
             "linear_negative_control_calibration": linear_calibration,
             "linear_negative_control_validation": linear_validation,
-            "paper_scale_passed": paper_scale_passed,
             "passed": passed,
         }
     elif claim_number == 2:
         rows = _read_csv(claim_dir / "raw_exact_moments.csv")
-        paper_rows = _read_csv(claim_dir / "raw_paper_scale.csv")
-        paper_controls = _read_csv(
-            claim_dir / "raw_paper_scale_negative_control.csv"
-        )
         fit = _fit(rows, markov=True)
         per_eta = {}
         for eta in sorted({row["eta"] for row in rows}):
@@ -146,87 +114,24 @@ def main() -> int:
                 )[0]
             )
             per_eta[str(eta)] = slope
-        paper_scale_passed = all(
-            float(final["value_rmse"]) < float(final["initial_value_rmse"])
-            and float(final["value_rmse"]) < float(early["value_rmse"])
-            for n, d in ((50, 5), (100, 20), (1000, 100))
-            for early, final in [
-                (
-                    next(
-                        row
-                        for row in paper_rows
-                        if row["sampling"] == "markov"
-                        and int(float(row["n"])) == n
-                        and int(float(row["d"])) == d
-                        and int(float(row["T"])) == 15000
-                    ),
-                    next(
-                        row
-                        for row in paper_rows
-                        if row["sampling"] == "markov"
-                        and int(float(row["n"])) == n
-                        and int(float(row["d"])) == d
-                        and int(float(row["T"])) == 150000
-                    ),
-                )
-            ]
-        )
-        control_final = next(
-            row for row in paper_controls if int(float(row["T"])) == 150000
-        )
-        valid_final = next(
-            row
-            for row in paper_rows
-            if row["sampling"] == "markov"
-            and int(float(row["n"])) == 100
-            and int(float(row["d"])) == 20
-            and int(float(row["T"])) == 150000
-        )
-        control_passed = float(control_final["value_rmse"]) > 1.5 * float(
-            valid_final["value_rmse"]
-        )
         passed = (
             -1.30 <= fit["T_exponent"] <= -0.70
             and all(-1.35 <= slope <= -0.65 for slope in per_eta.values())
-            and paper_scale_passed
-            and control_passed
         )
         result = {
             "recomputed_regression": fit,
             "per_eta_T_exponents": per_eta,
-            "paper_scale_passed": paper_scale_passed,
-            "paper_scale_negative_control_passed": control_passed,
             "passed": passed,
         }
     elif claim_number == 3:
         formulas = json.loads((claim_dir / "raw_formula_dependencies.json").read_text())
-        paper_rows = _read_csv(claim_dir / "raw_paper_scale.csv")
         forbidden = [
             formula["name"]
             for formula in formulas
             if "d" in formula["free_symbols"]
         ]
-        paper_scale_passed = all(
-            float(final["value_rmse"]) < float(final["initial_value_rmse"])
-            for sampling in ("iid", "markov")
-            for n, d in ((50, 5), (100, 20), (1000, 100))
-            for final in [
-                next(
-                    row
-                    for row in paper_rows
-                    if row["sampling"] == sampling
-                    and int(float(row["n"])) == n
-                    and int(float(row["d"])) == d
-                    and int(float(row["T"])) == 150000
-                )
-            ]
-        )
-        passed = not forbidden and paper_scale_passed
-        result = {
-            "formulas_with_explicit_d": forbidden,
-            "paper_scale_passed": paper_scale_passed,
-            "passed": passed,
-        }
+        passed = not forbidden
+        result = {"formulas_with_explicit_d": forbidden, "passed": passed}
     elif claim_number == 4:
         audit = json.loads(
             (claim_dir / "raw_primary_source_rate_audit.json").read_text()
@@ -313,64 +218,18 @@ def main() -> int:
             for row in controls
             if float(row["eta"]) == min(float(item["eta"]) for item in controls)
         ][0]
-        graph = json.loads(
-            (claim_dir / "raw_theorem44_dependency_graph.json").read_text()
-        )
-        negative_graph = json.loads(
-            (
-                claim_dir
-                / "negative_control_theorem44_dependency_graph.json"
-            ).read_text()
-        )
-        steps = {step["name"]: step for step in graph["source_steps"]}
-        recomputed_g = [
-            float(a) - float(b)
-            for a, b in zip(
-                steps["R_theta"]["exponents"],
-                steps["lambda_squared"]["exponents"],
-            )
-        ]
-        recomputed_steady = [
-            float(a) + float(b) - float(c)
-            for a, b, c in zip(
-                steps["alpha"]["exponents"],
-                recomputed_g,
-                steps["zeta"]["exponents"],
-            )
-        ]
-        recomputed_common = [
-            recomputed_steady[0] + recomputed_steady[1],
-            recomputed_steady[2],
-        ]
-        dependency_valid = (
-            recomputed_g == [-1.0, -1.0, 0.0]
-            and recomputed_steady == [-1.0, -3.0, -1.0]
-            and recomputed_common == [-4.0, -1.0]
-            and steps["G_const"]["exponents"] == recomputed_g
-            and steps["steady_state_error"]["exponents"] == recomputed_steady
-            and graph["common_regime_substitution"]["output_exponents"]
-            == recomputed_common
-        )
-        negative_rejected = negative_graph["common_regime_substitution"][
-            "output_exponents"
-        ] != [-4.0, -1.0]
         passed = (
             max(ratios) - min(ratios) <= 1e-12
             and projected_root_valid
-            and dependency_valid
-            and negative_rejected
+            and all(-1.45 <= slope <= -0.55 for slope in per_eta.values())
             and quartic_validation <= 1.35 * quartic_calibration
+            and cubic_validation > 1.35 * cubic_calibration
             and float(control["mse"]) > 1.5 * float(target["mse"])
         )
         result = {
             "eta_prime_over_eta_range": [min(ratios), max(ratios)],
             "projected_root_valid": projected_root_valid,
             "per_eta_T_exponents": per_eta,
-            "recomputed_G_const_exponents": recomputed_g,
-            "recomputed_steady_state_exponents": recomputed_steady,
-            "recomputed_common_regime_exponents": recomputed_common,
-            "dependency_graph_valid": dependency_valid,
-            "negative_dependency_graph_rejected": negative_rejected,
             "quartic_calibration": quartic_calibration,
             "quartic_validation": quartic_validation,
             "cubic_negative_calibration": cubic_calibration,

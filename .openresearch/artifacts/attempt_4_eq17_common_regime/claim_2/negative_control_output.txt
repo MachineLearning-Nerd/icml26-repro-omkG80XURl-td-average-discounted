@@ -1,0 +1,3 @@
+Injected failure: first contract check forced false.
+returncode=1
+{"checks": {"all_horizons_exceed_mixing_time": true, "all_per_eta_T_exponents_in_band": true, "all_stepsizes_obey_eta_over_18": true, "mixing_adjusted_T_exponent_in_minus_one_band": false, "moment_mass_conserved_with_matrix_power_roundoff_tolerance": true}, "failed": ["mixing_adjusted_T_exponent_in_minus_one_band"], "verdict": "VERIFIED"}

@@ -1,0 +1,46 @@
+[
+  {
+    "free_symbols": [
+      "T",
+      "tau_mix",
+      "c0",
+      "a",
+      "eta",
+      "theta0_norm",
+      "theta_star_norm",
+      "r_max",
+      "d"
+    ],
+    "name": "theorem_4_3_xi_equals_1"
+  },
+  {
+    "free_symbols": [
+      "T",
+      "tau_mix",
+      "c0",
+      "a",
+      "eta",
+      "xi",
+      "theta0_norm",
+      "theta_star_norm",
+      "r_max"
+    ],
+    "name": "theorem_4_3_xi_between_0_and_1"
+  },
+  {
+    "free_symbols": [
+      "T",
+      "tau_mix",
+      "c0",
+      "a",
+      "eta",
+      "xi",
+      "C",
+      "beta",
+      "theta0_norm",
+      "theta_star_norm",
+      "r_max"
+    ],
+    "name": "theorem_D_1_explicit_constants"
+  }
+]

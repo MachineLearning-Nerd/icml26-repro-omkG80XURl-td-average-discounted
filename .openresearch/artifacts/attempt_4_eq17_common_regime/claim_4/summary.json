@@ -1,0 +1,12 @@
+{
+  "assessment": "The proposed method's quadratic upper envelope is directly measured with held-out eta values. Independently downloaded primary sources state a quartic average-reward parameter dependence and a quadratic discounted-TD parameter dependence. Definitions remain explicitly separate, so this verifies the comparative published-bound claim without pretending the powers are measurements of one scalar.",
+  "checks": {
+    "condition_number_definitions_are_not_collapsed": true,
+    "discounted_primary_source_is_quadratic": true,
+    "new_average_reward_bound_is_quadratic": true,
+    "prior_average_reward_primary_source_is_quartic": true,
+    "proposed_quadratic_upper_envelope_measured": true
+  },
+  "independent_checker_returncode": 0,
+  "verdict": "VERIFIED"
+}

@@ -1,0 +1,37 @@
+{
+  "definition_alignment": {
+    "eta1": "Equation (3) / Equation (8) of 2605.02103",
+    "eta2": "minimum Dirichlet energy on the additive-constant-orthogonal parameter subspace; Appendix B.2 of 2605.02103",
+    "eta_discounted": "(1-gamma) times the minimum eigenvalue of Phi^T D Phi",
+    "powers_are_not_treated_as_values_of_one_common_scalar": true
+  },
+  "discounted_td": {
+    "anchor": "Theorem 2(c), PDF page 13",
+    "source": "Bhandari, Russo, Singal (COLT 2018), Theorem 2(c), A Finite Time Analysis of TD with Linear Function Approximation",
+    "source_sha256": "bcb157ad56d73108f9404ab4e7a924b006a7465cc921290864664936b2432fcc",
+    "squared_parameter_error_denominator_exponents": {
+      "epsilon": -1,
+      "one_minus_gamma_times_omega": -2
+    },
+    "url": "https://arxiv.org/pdf/1806.02450"
+  },
+  "prior_average_reward": {
+    "anchor": "Corollary 1, PDF page 6",
+    "mean_square_denominator_exponents": {
+      "epsilon": -1,
+      "eta2": -4
+    },
+    "source": "Zhang, Zhang, Maguluri (NeurIPS 2021), Corollary 1, Finite Sample Analysis of Average-Reward TD Learning and Q-Learning",
+    "source_sha256": "e41f7a32bc53820ca5732a7fa6494bf890a85f6b23f32796fe0a1eb5f362f5e4",
+    "transcription_note": "The primary source states RMSE tolerance epsilon with epsilon^-2; rewriting for mean-square tolerance gives epsilon^-1.",
+    "url": "https://proceedings.neurips.cc/paper/2021/file/096ffc299200f51751b08da6d865ae95-Paper.pdf"
+  },
+  "proposed_average_reward": {
+    "source": "2605.02103, Theorems 4.1-4.2",
+    "source_sha256": "2d40f7e54ced7ee48f9b336f2928e081e679293122d09d09e9fe681a6601a9d9",
+    "squared_parameter_error_denominator_exponents": {
+      "epsilon": -1,
+      "eta1": -2
+    }
+  }
+}

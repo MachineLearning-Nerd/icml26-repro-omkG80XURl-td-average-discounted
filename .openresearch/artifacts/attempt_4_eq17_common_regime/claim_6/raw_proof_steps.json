@@ -1,0 +1,16 @@
+{
+  "max_dirichlet_identity_error": 1.2878587085651816e-14,
+  "max_sampled_contraction_excess": -0.03946900356283156,
+  "negative_control": {
+    "expected_to_fail": true,
+    "proposed_false_statement": "eta1 >= 1.1 * eta3",
+    "tight_case_margin": -0.04999999999999993
+  },
+  "steps": {
+    "P_is_D_norm_contraction_on_stress_probes": true,
+    "dirichlet_equals_quadratic_form": true,
+    "lambda_is_at_most_two": true,
+    "rayleigh_minimum_preserves_half_factor": true,
+    "scalar_decomposition_coefficients_nonnegative_for_lambda_in_0_2": true
+  }
+}

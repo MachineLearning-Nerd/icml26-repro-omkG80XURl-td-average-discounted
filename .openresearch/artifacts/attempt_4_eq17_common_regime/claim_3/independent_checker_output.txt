@@ -1,0 +1,5 @@
+returncode=0
+{
+  "formulas_with_explicit_d": [],
+  "passed": true
+}
