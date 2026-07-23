@@ -1,0 +1,22 @@
+{
+  "allowed_verdicts": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "assumptions": [
+    "finite-state fixed-policy evaluation",
+    "irreducible and aperiodic induced chain",
+    "full-column-rank normalized features",
+    "stationary sampling where required",
+    "paper-prescribed step-size regime"
+  ],
+  "claim": 4,
+  "machine_checks": [
+    "proposed_method_quadratic_envelope_measured",
+    "prior_algorithms_implemented_under_matched_contract"
+  ],
+  "paper_statement": "The proposed two-chain theoretical bound is quadratic in eta1^-1, compared with quartic prior coupled-SA bounds and quadratic discounted-TD bounds, under their respective condition-number definitions.",
+  "source_sha256": "2d40f7e54ced7ee48f9b336f2928e081e679293122d09d09e9fe681a6601a9d9",
+  "source_url": "https://ar5iv.labs.arxiv.org/html/2605.02103#S1.T1"
+}
