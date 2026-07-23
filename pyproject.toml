@@ -1,0 +1,9 @@
+[project]
+name = "td-average-discounted-reproduction"
+version = "0.1.0"
+description = "CPU reproduction of Bridging the Gap Between Average and Discounted TD Learning"
+requires-python = "==3.12.*"
+dependencies = [
+    "numpy==2.2.6",
+]
+
