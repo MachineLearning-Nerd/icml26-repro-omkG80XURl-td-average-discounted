@@ -31,7 +31,7 @@ with no GPU.
 |---|---|---|---|---|
 | `master` | Publication surface | Not run as an experiment (publication surface) | README, report, notebook, and release manifests | — |
 | [Claim 3 falsification audit](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-audit-with-controlled-dime) | Exact source audit, normalization proof, 64-seed controlled dimension sweep, negative control | `uv run --frozen python repro/src/verify_td.py` | `BLOCKED`; current `TOY` verdict preserved; all cumulative regressions pass | Hugging Face `cpu-upgrade`, 3m32s, no GPU |
-| [Claim 3 release child](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-blocked-release) | Additive Space candidate, preservation suite, report, and notebook | `uv run --frozen python repro/src/verify_td.py` | Presentation/fresh-clone release gate | Hugging Face `cpu-upgrade`, pending |
+| [Claim 3 release child](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-blocked-release) | Additive Space candidate, preservation suite, report, and notebook | `uv run --frozen python repro/src/verify_td.py` | All cumulative checks pass; focused falsification remains `BLOCKED` | Hugging Face `cpu-upgrade`, 3m37s, no GPU |
 
 ---
 

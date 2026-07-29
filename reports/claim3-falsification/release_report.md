@@ -58,6 +58,10 @@ paper leaves the sufficient-\(c_0\) threshold implicit through Lemma D.2.
   `b97a05bb-7e92-4031-8e65-0f78fb74c92f` exited 127 before code execution
   because the default image lacked `uv`; it is excluded from scientific
   evidence.
+- Fresh release-child run:
+  `57675fd5-0fc9-40c6-8f9b-4be4cb744ba2` at
+  `2461c6b0025ea7f8c6ecb6ae3e45e187ad041bc7`, completed in 3m37s with the
+  same cumulative result.
 
 ## Protected evidence and candidate
 

@@ -67,6 +67,9 @@ uv pip install --python .venv/bin/python marimo==0.23.14
 .venv/bin/marimo check --strict notebooks/claim3_falsification.py
 xmllint --noout reports/claim3-falsification/images/*.svg
 qlmanage -t -s 900 -o /tmp/claim3-svg-preview reports/claim3-falsification/images/*.svg
+orx exp run 86697acd-2be6-4dfa-91cd-fc49db6204d0 --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 3600
+orx exp wait 86697acd-2be6-4dfa-91cd-fc49db6204d0 --timeout 480
+orx logs 57675fd5-0fc9-40c6-8f9b-4be4cb744ba2
 ```
 
 The candidate builder verifies the complete protected subset, byte-identical
