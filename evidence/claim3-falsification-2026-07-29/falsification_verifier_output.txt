@@ -1,0 +1,2 @@
+{"assumption_valid_counterexample": false, "bound_violation": false, "explicit_d": false, "falsified": false}
+returncode=1

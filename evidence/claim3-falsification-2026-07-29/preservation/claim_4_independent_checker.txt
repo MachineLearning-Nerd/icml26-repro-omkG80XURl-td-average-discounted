@@ -1,0 +1,8 @@
+{
+  "discounted_power": -2,
+  "passed": true,
+  "prior_average_reward_power": -4,
+  "proposed_average_reward_power": -2,
+  "proposed_heldout_envelope": true
+}
+returncode=0

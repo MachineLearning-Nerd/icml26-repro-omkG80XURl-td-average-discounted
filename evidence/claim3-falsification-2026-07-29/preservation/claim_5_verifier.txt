@@ -1,0 +1,2 @@
+{"checks": {"algorithm_negative_control_is_materially_worse": true, "all_theorem_stepsize_ratios_legal": true, "common_regime_substitution_is_eta_quartic_T_inverse": true, "conditional_quartic_exponent_arithmetic_reproduced": true, "eta_prime_omission_negative_control_is_rejected": true, "eta_prime_over_eta_is_constant": true, "general_theorem_dependency_is_eta_prime_inverse_eta_cubed_T_inverse": true, "projected_root_satisfies_mean_field_equation": true, "quartic_upper_envelope_holds_on_smaller_eta_holdout": true}, "failed": [], "verdict": "VERIFIED"}
+returncode=0

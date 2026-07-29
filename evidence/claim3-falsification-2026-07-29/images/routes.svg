@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="Three independent falsification routes all lead to blocked">
+  <rect width="900" height="360" rx="22" fill="#f8fafc"/>
+  <text x="48" y="50" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#172033">Three routes, no valid contradiction</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="48" y="95" width="230" height="150" rx="16" fill="#dbeafe"/>
+    <text x="68" y="125" font-size="16" font-weight="700" fill="#1e3a8a">1 · Source contract</text>
+    <text x="68" y="156" font-size="14" fill="#1e3a8a">No free d in Theorem 4.3</text>
+    <text x="68" y="178" font-size="14" fill="#1e3a8a">or full Theorem D.1</text>
+    <text x="68" y="217" font-size="14" font-weight="700" fill="#1e40af">No falsification</text>
+    <rect x="335" y="95" width="230" height="150" rx="16" fill="#fee2e2"/>
+    <text x="355" y="125" font-size="16" font-weight="700" fill="#7f1d1d">2 · Feasibility proof</text>
+    <text x="355" y="156" font-size="14" fill="#7f1d1d">Peer η₁ violates η₁≤3/d</text>
+    <text x="355" y="178" font-size="14" fill="#7f1d1d">under normalized features</text>
+    <text x="355" y="217" font-size="14" font-weight="700" fill="#991b1b">Out of domain</text>
+    <rect x="622" y="95" width="230" height="150" rx="16" fill="#ccfbf1"/>
+    <text x="642" y="125" font-size="16" font-weight="700" fill="#115e59">3 · Algorithm sweep</text>
+    <text x="642" y="156" font-size="14" fill="#115e59">64 seeds × four dimensions</text>
+    <text x="642" y="178" font-size="14" fill="#115e59">η₁=1/d exactly</text>
+    <text x="642" y="217" font-size="14" font-weight="700" fill="#0f766e">Non-identifying</text>
+    <line x1="163" y1="262" x2="163" y2="292" stroke="#64748b" stroke-width="2"/>
+    <line x1="450" y1="262" x2="450" y2="292" stroke="#64748b" stroke-width="2"/>
+    <line x1="737" y1="262" x2="737" y2="292" stroke="#64748b" stroke-width="2"/>
+    <line x1="163" y1="292" x2="737" y2="292" stroke="#64748b" stroke-width="2"/>
+    <rect x="340" y="278" width="220" height="58" rx="16" fill="#fef3c7"/>
+    <text x="450" y="313" text-anchor="middle" font-size="20" font-weight="700" fill="#92400e">Falsification: BLOCKED</text>
+  </g>
+</svg>

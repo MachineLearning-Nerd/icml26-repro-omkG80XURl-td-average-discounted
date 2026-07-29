@@ -1,0 +1,45 @@
+{
+  "allowed_dependencies": [
+    "T",
+    "tau_mix",
+    "c0",
+    "a",
+    "eta",
+    "xi",
+    "C",
+    "beta",
+    "r_max",
+    "||theta_0||",
+    "||theta*||"
+  ],
+  "assumptions": [
+    "finite-state fixed-policy evaluation",
+    "the induced Markov chain is irreducible and aperiodic",
+    "the feature columns are linearly independent",
+    "max_s ||phi(s)||_2 <= 1",
+    "two independent Markov chains are used in Algorithm (15)",
+    "alpha_t=a/(t+c0)^xi with xi in (0,1], a>0",
+    "c0 satisfies the theorem's sufficiently-large conditions",
+    "T >= tau_mix"
+  ],
+  "claim": 3,
+  "evidence_status_options": [
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "falsification_rule": "FALSIFIED requires either a free explicit d in the stated bound, or an assumption-valid instance whose expected squared parameter error exceeds the fully instantiated Theorem D.1 upper bound. A hitting-time slope across changing instances is insufficient when eta, norms, mixing constants, c0 legality, or the bound itself are not all controlled.",
+  "paper_definition": "A convergence time is independent of d when dependence on d appears only through ||theta_0|| or ||theta*||.",
+  "paper_statement": "With decaying stepsizes, the double-chain method has convergence guarantees with no explicit dimension-dependent terms.",
+  "quantifier": "For every instance satisfying the assumptions and every eligible T, the displayed expected squared-parameter-error upper bound holds.",
+  "source": {
+    "anchors": [
+      "Introduction item (3), dimension-independence definition",
+      "Assumption 2.1",
+      "Theorem 4.3",
+      "Appendix D, Theorem D.1"
+    ],
+    "retrieved_utc_date": "2026-07-29",
+    "sha256": "c6d1ec937365657dfb23856b8b705b1aab889b68c1538f840bc459a7930563d9",
+    "url": "https://arxiv.org/html/2605.02103"
+  }
+}

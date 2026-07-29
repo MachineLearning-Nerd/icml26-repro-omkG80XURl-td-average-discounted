@@ -1,0 +1,5 @@
+d,normalized_eta1_upper_bound,peer_reported_eta1,peer_value_available,peer_value_satisfies_bound,violation_factor
+5,0.6,0.59,True,True,0.9833333333333333
+10,0.3,,False,,
+20,0.15,,False,,
+40,0.075,0.443,True,False,5.906666666666667

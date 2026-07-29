@@ -1,0 +1,2 @@
+{"checks": {"T_exponent_in_minus_one_band": true, "eta_inverse_one_negative_control_rejected": true, "largest_budget_mean_within_0_02_of_unique_root": true, "moment_mass_conserved": true, "paper_scale_iid_final_error_below_initial_and_early_checkpoint": true, "paper_scale_iid_includes_n1000_d100": true, "quadratic_upper_envelope_holds_on_smaller_eta_holdout": true, "regression_r_squared_at_least_0_98": true}, "failed": [], "verdict": "VERIFIED"}
+returncode=0

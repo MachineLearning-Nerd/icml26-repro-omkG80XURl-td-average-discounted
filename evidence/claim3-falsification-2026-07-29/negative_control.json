@@ -1,0 +1,10 @@
+{
+  "assumption_breaking_control": {
+    "eta1": 1.0,
+    "expected_rejection": "violates max_s ||phi(s)||<=1 for d>1",
+    "feature_matrix": "sqrt(d) I_d",
+    "row_norm": "sqrt(d)"
+  },
+  "control": "inject a free explicit d into Theorem 4.3",
+  "expected_falsified": true
+}

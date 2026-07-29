@@ -1,0 +1,2 @@
+{"checks": {"all_proof_steps_pass": true, "all_systematic_cases_satisfy_half_bound": true, "includes_nonreversible_positive_chains": true, "includes_paper_scale_n1000_d100": true, "stronger_1_1_negative_control_fails_on_tight_case": true}, "failed": [], "verdict": "VERIFIED"}
+returncode=0

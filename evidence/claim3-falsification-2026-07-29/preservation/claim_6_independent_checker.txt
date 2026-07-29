@@ -1,0 +1,12 @@
+{
+  "minimum_numeric_margin": 4.114739790742386e-07,
+  "passed": true,
+  "proof_steps": {
+    "P_is_D_norm_contraction_on_stress_probes": true,
+    "dirichlet_equals_quadratic_form": true,
+    "lambda_is_at_most_two": true,
+    "rayleigh_minimum_preserves_half_factor": true,
+    "scalar_decomposition_coefficients_nonnegative_for_lambda_in_0_2": true
+  }
+}
+returncode=0

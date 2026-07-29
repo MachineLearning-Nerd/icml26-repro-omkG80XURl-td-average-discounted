@@ -1,0 +1,17 @@
+[
+  {
+    "name": "exact source-formula and quantifier audit",
+    "result": "no forbidden free d; no contradiction",
+    "route": 1
+  },
+  {
+    "name": "normalization/eta feasibility cross-check",
+    "result": "peer d=40 eta1 violates eta1<=3/d by factor 5.907",
+    "route": 2
+  },
+  {
+    "name": "independent Algorithm (15) dimension sweep",
+    "result": "admissible family has eta1=1/d exactly; d and eta^-1 effects are non-identifiable, so no explicit-d contradiction",
+    "route": 3
+  }
+]
