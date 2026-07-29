@@ -1,0 +1,14 @@
+{
+  "backend": "Hugging Face Jobs",
+  "flavor": "cpu-upgrade",
+  "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim",
+  "run_id": "b8362379-48cd-4a46-82bf-a554fa12d9e4",
+  "job_id": "DineshAI/6a698e8915e81eca66a8da04",
+  "git_sha": "3ec797a7b78e54dcce9913d8148a019b3ffd5c98",
+  "command": "uv run --frozen python repro/src/verify_td.py",
+  "runtime": "3m32s",
+  "result": "done",
+  "cumulative_regression": "pass",
+  "claim_3_falsification_status": "BLOCKED",
+  "gpu_used": false
+}

@@ -1,0 +1,49 @@
+{
+  "explicit_d_found": false,
+  "formulas": [
+    {
+      "name": "Theorem 4.3, xi=1",
+      "symbols": [
+        "T",
+        "tau_mix",
+        "c0",
+        "a",
+        "eta",
+        "theta0_norm",
+        "theta_star_norm",
+        "r_max"
+      ]
+    },
+    {
+      "name": "Theorem 4.3, xi in (0,1)",
+      "symbols": [
+        "T",
+        "tau_mix",
+        "c0",
+        "a",
+        "eta",
+        "xi",
+        "theta0_norm",
+        "theta_star_norm",
+        "r_max"
+      ]
+    },
+    {
+      "name": "Theorem D.1",
+      "symbols": [
+        "T",
+        "tau_mix",
+        "c0",
+        "a",
+        "eta",
+        "xi",
+        "C",
+        "beta",
+        "theta0_norm",
+        "theta_star_norm",
+        "r_max"
+      ]
+    }
+  ],
+  "transcription_cross_check": "The main theorem and full appendix restatement were audited independently; both omit a free d."
+}

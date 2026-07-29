@@ -1,0 +1,74 @@
+[
+  {
+    "assumptions": {
+      "T_at_least_tau_mix": true,
+      "aperiodic": true,
+      "decaying_schedule": true,
+      "full_column_rank": true,
+      "irreducible": true,
+      "normalized_features": true,
+      "two_independent_chains": true
+    },
+    "d": 5,
+    "eta1": 0.20000000000000004,
+    "expected_eta1": 0.2,
+    "hit_fraction": 1.0,
+    "median_hitting_time": 206.5,
+    "replicates": 64,
+    "threshold_squared_parameter_error": 0.20000000000000004
+  },
+  {
+    "assumptions": {
+      "T_at_least_tau_mix": true,
+      "aperiodic": true,
+      "decaying_schedule": true,
+      "full_column_rank": true,
+      "irreducible": true,
+      "normalized_features": true,
+      "two_independent_chains": true
+    },
+    "d": 10,
+    "eta1": 0.1,
+    "expected_eta1": 0.1,
+    "hit_fraction": 1.0,
+    "median_hitting_time": 201.5,
+    "replicates": 64,
+    "threshold_squared_parameter_error": 0.22500000000000003
+  },
+  {
+    "assumptions": {
+      "T_at_least_tau_mix": true,
+      "aperiodic": true,
+      "decaying_schedule": true,
+      "full_column_rank": true,
+      "irreducible": true,
+      "normalized_features": true,
+      "two_independent_chains": true
+    },
+    "d": 20,
+    "eta1": 0.05,
+    "expected_eta1": 0.05,
+    "hit_fraction": 1.0,
+    "median_hitting_time": 243.0,
+    "replicates": 64,
+    "threshold_squared_parameter_error": 0.23749999999999996
+  },
+  {
+    "assumptions": {
+      "T_at_least_tau_mix": true,
+      "aperiodic": true,
+      "decaying_schedule": true,
+      "full_column_rank": true,
+      "irreducible": true,
+      "normalized_features": true,
+      "two_independent_chains": true
+    },
+    "d": 40,
+    "eta1": 0.025,
+    "expected_eta1": 0.025,
+    "hit_fraction": 1.0,
+    "median_hitting_time": 296.0,
+    "replicates": 64,
+    "threshold_squared_parameter_error": 0.24374999999999994
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "contract_sha256": "bbf8a75a3aab58ba1e007eac83f1fed79f6cd7b67da7a17fd04023334152229b",
+  "current_claim_verdict_preserved": "TOY",
+  "explicit_d_found": false,
+  "falsified": false,
+  "fully_instantiated_D1_bound_violation": false,
+  "peer_hypothesis_assumption_valid": false,
+  "reason": "No assumption-valid contradiction was established. The peer's reported eta1=0.443 at d=40 exceeds the normalization-implied upper bound 3/d=0.075, and its page supplies no raw evidence needed to instantiate Theorem D.1. The independent admissible family has eta1=1/d, making any d trend observationally indistinguishable from the theorem's allowed eta dependence.",
+  "status": "BLOCKED"
+}

@@ -1,3 +1,40 @@
+# Focused Claim 3 falsification campaign
+
+[![Open Claim 3 audit in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/blob/master/notebooks/claim3_falsification.py)
+
+We independently tested whether Claim 3 of **Bridging the Gap Between Average
+and Discounted TD Learning** can be falsified by the reported \(d^2\)
+hitting-time effect. The peer number was a \(d\)-exponent of **2.015**
+(\(R^2=0.994\)); our assumption-valid reconstruction observed **0.183**
+across \(d=\{5,10,20,40\}\), using 64 fixed seeds.
+
+**Falsification status: BLOCKED.** The peer page publishes no executable
+artifacts, and its \(\eta_1=0.443\) at \(d=40\) violates the
+normalized-feature consequence \(\eta_1\le3/d=0.075\) by 5.91×. In our
+admissible family, \(\eta_1=1/d\) exactly, so dimension and allowed
+condition-number dependence cannot be identified separately. The current
+judged Claim 3 verdict remains `TOY`; no score change is claimed.
+
+The reconstruction substitutes a controlled uniform Markov chain because the
+peer transition, reward, features, and seeds were unavailable. The formal run
+used Hugging Face `cpu-upgrade` for 3m32s, CPython 3.12.11 and NumPy 2.2.6,
+with no GPU.
+
+- [Illustrated Claim 3 falsification report](reports/claim3-falsification/report.md)
+- [Self-contained Claim 3 marimo notebook](notebooks/claim3_falsification.py)
+- [Machine-readable Claim 3 evidence](.openresearch/artifacts/claim3_falsification_2026_07_29)
+- [Earlier six-claim reproduction report](reports/rigorous-reproduction/report.md)
+
+## Focused experiment log
+
+| Branch / experiment | Purpose or change | Exact run command | Assessment / outcome | Compute |
+|---|---|---|---|---|
+| `master` | Publication surface | Not run as an experiment (publication surface) | README, report, notebook, and release manifests | — |
+| [Claim 3 falsification audit](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-audit-with-controlled-dime) | Exact source audit, normalization proof, 64-seed controlled dimension sweep, negative control | `uv run --frozen python repro/src/verify_td.py` | `BLOCKED`; current `TOY` verdict preserved; all cumulative regressions pass | Hugging Face `cpu-upgrade`, 3m32s, no GPU |
+| [Claim 3 release child](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-blocked-release) | Additive Space candidate, preservation suite, report, and notebook | `uv run --frozen python repro/src/verify_td.py` | Presentation/fresh-clone release gate | Hugging Face `cpu-upgrade`, pending |
+
+---
+
 # Rigorous reproduction: six TD-learning claims
 
 [![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/blob/master/notebooks/td_rate_reproduction.py)

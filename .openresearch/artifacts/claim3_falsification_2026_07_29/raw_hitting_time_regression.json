@@ -1,0 +1,9 @@
+{
+  "d_exponent": 0.18285426577063194,
+  "eta_intercept": 4.970467706923146,
+  "eta_inverse_exponent": 0.18285426577063194,
+  "identified": true,
+  "intercept": 4.970467706923146,
+  "interpretation": "In this admissible family eta1=1/d exactly, so the d and eta1^-1 regressors are algebraically identical and cannot identify an additional explicit-d effect.",
+  "r_squared": 0.8485564886819523
+}

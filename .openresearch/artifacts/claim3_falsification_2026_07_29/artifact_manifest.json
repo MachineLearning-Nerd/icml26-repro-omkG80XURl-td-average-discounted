@@ -1,0 +1,117 @@
+[
+  {
+    "bytes": 393,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/EVAL.md",
+    "sha256": "c46708825fd787d6bcb75c005a2cd3c0784b990ffcbb3b5f7cf8a335ae165e3b"
+  },
+  {
+    "bytes": 500,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/attempts.json",
+    "sha256": "54a69ac1ec984f36230019a7fb686d31a219330a7d29b4de10afc5542f81fbee"
+  },
+  {
+    "bytes": 1818,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/claim_contract.json",
+    "sha256": "8d1328f45eb5768fdc0aad4cd524ad19452af4c9e591407e4ed34186b77698f6"
+  },
+  {
+    "bytes": 931,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/environment.json",
+    "sha256": "6d54e328d851a3fc3325c8b26b7cb5569e411f940a80bca3e8acef4f616459af"
+  },
+  {
+    "bytes": 46,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/exact_command.txt",
+    "sha256": "d9c0ac9c5da8d131a4b6316e1dd5de64e28c900a028bfd231751660b86666080"
+  },
+  {
+    "bytes": 707,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/falsification_verifier.py",
+    "sha256": "4c297985471a2b767fbfe97871a6d2fa5050e0d8b97252e485d810f08b0ea690"
+  },
+  {
+    "bytes": 123,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/falsification_verifier_output.txt",
+    "sha256": "babe7cae16b92eee95aa72f60a6f0581e357d3f97f85e4babaebb239fd1c7829"
+  },
+  {
+    "bytes": 487,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/formal_run.json",
+    "sha256": "d21146d9d635203f3c5ea6f1dd4ff23eeb4aacdedd5d61f0ba16b1d59662cb1a"
+  },
+  {
+    "bytes": 429,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/independent_checker.json",
+    "sha256": "61d1b981ae51154e30ce11b2dfb4639e070ad6c41f92d52c2a4c501e4d09e39d"
+  },
+  {
+    "bytes": 442,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/independent_checker_output.txt",
+    "sha256": "f1bf724840d03ea67c0399c8f55c3675cb10bcd71e8d923232c73af916429936"
+  },
+  {
+    "bytes": 533,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/limitations.md",
+    "sha256": "3788021623a61b9ced872224d5f0d21143a168fde49eb9329e87ca103377486d"
+  },
+  {
+    "bytes": 676,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/method.md",
+    "sha256": "1744bc875782b03ecbbb4961760d070dbb11b9afd838f62f5a44bfafc5a69109"
+  },
+  {
+    "bytes": 277,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/negative_control.json",
+    "sha256": "381d43bbc5916be70d33f99c0ea745c7e59e3d4e479810b703b083ed18d8f452"
+  },
+  {
+    "bytes": 121,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/negative_control_output.txt",
+    "sha256": "5dedbb266f59529f1289030444fdd030cb7a36c01e9dfb317f04605dd17af0d0"
+  },
+  {
+    "bytes": 706,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/negative_control_verifier.py",
+    "sha256": "ac7490c5fd8525cda886617b85914027a483829e235ded1087ca86a9085239f3"
+  },
+  {
+    "bytes": 885,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/peer_hypothesis_audit.json",
+    "sha256": "8847159b8c12dfd684dda303f7dd9623da5698fcb0ffa39161ea46b436da44d5"
+  },
+  {
+    "bytes": 4792,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/raw_controlled_dimension_sweep.csv",
+    "sha256": "e31fa30c6e0bde9e33d556668ab3430d786d8cec3ab76b8be542ff38235d5625"
+  },
+  {
+    "bytes": 884,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/raw_formula_audit.json",
+    "sha256": "641e58695b27c5e6d15112f926fc08f36d11c87cb8401365c26dbdca87238f80"
+  },
+  {
+    "bytes": 396,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/raw_hitting_time_regression.json",
+    "sha256": "8f87c0a398999a7af8f9c8173f6f013ce8a1c3199e8d280500d93a080085dca4"
+  },
+  {
+    "bytes": 1856,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/raw_hitting_time_summary.json",
+    "sha256": "5d02bda5bd22307eb3b4119acbc18cc95ca3bb04e3e46d2ea707d625bcb2fcb5"
+  },
+  {
+    "bytes": 236,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/raw_peer_trace_bound.csv",
+    "sha256": "44f2750431d880720c59e45a7e0901871ca1525b35c735aac70f237ecf84f4b6"
+  },
+  {
+    "bytes": 649,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/source_audit.md",
+    "sha256": "44b889a0341ee0343ade9566393faf78ddc1504dd8dcb013a0737c0b7ffca0ca"
+  },
+  {
+    "bytes": 684,
+    "path": ".openresearch/artifacts/claim3_falsification_2026_07_29/verdict.json",
+    "sha256": "b4df1283089ba9ee0d417b4630d99df478aac96295c0b8648911c0b35cbd914f"
+  }
+]

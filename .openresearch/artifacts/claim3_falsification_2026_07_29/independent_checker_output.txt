@@ -1,0 +1,12 @@
+{
+  "controlled_family_eta1_equals_inverse_d": true,
+  "controlled_family_satisfies_all_listed_assumptions": true,
+  "controlled_outputs_are_finite": true,
+  "current_toy_verdict_is_preserved": true,
+  "final_status_is_blocked": true,
+  "injected_d_negative_control_is_detected": true,
+  "paper_formula_has_no_free_d": true,
+  "peer_d40_eta_violates_normalized_trace_bound": true,
+  "real_falsification_verifier_rejects": true
+}
+returncode=0

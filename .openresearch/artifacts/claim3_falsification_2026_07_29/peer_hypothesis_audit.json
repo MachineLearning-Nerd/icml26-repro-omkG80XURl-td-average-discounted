@@ -1,0 +1,39 @@
+{
+  "claim_page_sha256": "22936858b20588c9d9965223968adb0373f54f5aeafeb00a9e3633bd0bd39792",
+  "hypothesis_only": true,
+  "missing_from_peer_page": [
+    "code",
+    "raw outputs",
+    "seeds",
+    "feature matrix or normalization check",
+    "transition and reward definitions",
+    "theta norms",
+    "mixing constants",
+    "c0 legality check",
+    "expected-error estimator",
+    "instantiated Theorem D.1 RHS",
+    "executable verifier"
+  ],
+  "reported": {
+    "dimensions": [
+      5,
+      10,
+      20,
+      40
+    ],
+    "eta1_endpoints": [
+      0.59,
+      0.443
+    ],
+    "median_hitting_times": [
+      52,
+      200,
+      651,
+      3692
+    ],
+    "reported_r_squared": 0.994,
+    "reported_slope": 2.015
+  },
+  "revision": "fe98ec5fc3c12b79e80c94fc231ea9a39e9d1d44",
+  "space_id": "sabaridsnfuji/repro-bridging-the-gap-between-average-and-discounted-td-learning"
+}
