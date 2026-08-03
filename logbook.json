@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "title": "Reproduction: Bridging the Gap Between Average and Discounted TD Learning",
+  "emoji": "\ud83c\udfaf",
+  "space_id": "DineshAI/omkG80XURl",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-omkG80XURl"
+  ],
+  "updated_at": "2026-08-02T23:40:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Reproduction: Bridging the Gap Between Average and Discounted TD Learning",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "executive-summary",
+        "title": "Executive summary",
+        "file": "pages/executive-summary/page.md",
+        "children": [
+          {
+            "slug": "overview",
+            "title": "Retained overview",
+            "file": "pages/overview/page.md",
+            "children": []
+          },
+          {
+            "slug": "claims",
+            "title": "Retained claims index",
+            "file": "pages/claims/page.md",
+            "children": []
+          },
+          {
+            "slug": "evidence",
+            "title": "Retained evidence index",
+            "file": "pages/evidence/page.md",
+            "children": []
+          },
+          {
+            "slug": "verification-run",
+            "title": "Retained verification run",
+            "file": "pages/verification-run/page.md",
+            "children": []
+          },
+          {
+            "slug": "rigorous-reproduction",
+            "title": "Retained rigorous overview",
+            "file": "pages/rigorous-reproduction/page.md",
+            "children": []
+          },
+          {
+            "slug": "rigorous-claim-1",
+            "title": "Retained rigorous Claim 1",
+            "file": "pages/rigorous-claim-1/page.md",
+            "children": []
+          },
+          {
+            "slug": "rigorous-claim-2",
+            "title": "Retained rigorous Claim 2",
+            "file": "pages/rigorous-claim-2/page.md",
+            "children": []
+          },
+          {
+            "slug": "rigorous-claim-3",
+            "title": "Retained rigorous Claim 3",
+            "file": "pages/rigorous-claim-3/page.md",
+            "children": []
+          },
+          {
+            "slug": "rigorous-claim-4",
+            "title": "Retained rigorous Claim 4",
+            "file": "pages/rigorous-claim-4/page.md",
+            "children": []
+          },
+          {
+            "slug": "rigorous-claim-5",
+            "title": "Retained rigorous Claim 5",
+            "file": "pages/rigorous-claim-5/page.md",
+            "children": []
+          },
+          {
+            "slug": "rigorous-claim-6",
+            "title": "Retained rigorous Claim 6",
+            "file": "pages/rigorous-claim-6/page.md",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "claim-1-current",
+        "title": "Claim 1 — i.i.d. double-chain rate",
+        "file": "pages/claim-1-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2-current",
+        "title": "Claim 2 — Markov double-chain rate",
+        "file": "pages/claim-2-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-3-current",
+        "title": "Claim 3 — no explicit dimension term",
+        "file": "pages/claim-3-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-4-current",
+        "title": "Claim 4 — quadratic condition dependence",
+        "file": "pages/claim-4-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-5-current",
+        "title": "Claim 5 — single-chain quartic rate",
+        "file": "pages/claim-5-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-6-current",
+        "title": "Claim 6 — eta1 at least eta3/2",
+        "file": "pages/claim-6-current/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 10000,
+  "revision": "20260802234000"
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Average-reward TD — visible CPU reproduction</title>
+<style>
+:root { --ink:#172234; --navy:#183b5b; --blue:#287b8e; --mint:#e8f7f3; --gold:#d59a2c; --paper:#fff; --line:#bdd2d8; --muted:#536473; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:var(--mint); font-family:Inter,"Source Sans 3",Arial,sans-serif; }
+.poster { min-height:620px; padding:30px 36px 27px; border-top:14px solid var(--navy); background:var(--paper); }
+.eyebrow { color:var(--blue); font-size:13px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+h1 { max-width:1120px; margin:9px 0 7px; font-size:36px; line-height:1.04; }
+.subtitle { margin:0; color:var(--muted); font-size:17px; line-height:1.35; }
+.metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:22px 0 16px; }
+.metric { min-height:91px; padding:15px 17px; color:var(--paper); background:var(--navy); border-bottom:5px solid var(--gold); border-radius:9px; font-size:13px; line-height:1.3; }
+.metric b { display:block; margin-bottom:3px; font-size:26px; line-height:1.05; }
+.cards { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+.card { min-height:180px; padding:17px 18px; color:var(--ink); background:#fffaf0; border:1px solid var(--line); border-radius:9px; text-decoration:none; line-height:1.42; }
+.card strong { display:block; margin-bottom:7px; color:var(--navy); font-size:18px; line-height:1.15; }
+.card em { color:var(--blue); font-style:normal; font-weight:800; }
+.pill { display:inline-block; margin-top:10px; padding:5px 9px; color:var(--navy); background:var(--mint); border-radius:99px; font-size:11px; font-weight:800; }
+.foot { margin-top:18px; color:var(--muted); font-size:12px; line-height:1.35; }
+@media (max-width:850px) { .metrics { grid-template-columns:repeat(2,1fr); } .cards { grid-template-columns:1fr; } h1 { font-size:29px; } }
+</style>
+</head>
+<body>
+<main class="poster">
+  <div class="eyebrow">ICML 2026 · CPU theory reproduction</div>
+  <h1>Hidden rate evidence becomes a one-command, inspectable audit</h1>
+  <p class="subtitle">The preserved result boxes pointed to unreachable relative paths. Every claim now exposes its raw values, code, independent checker, and falsifying control directly.</p>
+  <section class="metrics">
+    <div class="metric"><b>6 / 6</b>source-bound claim contracts pass locally</div>
+    <div class="metric"><b>59.76 s</b>one frozen cumulative CPU command</div>
+    <div class="metric"><b>6 / 6 fail</b>injected contract mutations rejected</div>
+    <div class="metric"><b>USD 0</b>no GPU, Hub Job, or paid compute</div>
+  </section>
+  <section class="cards">
+    <a class="card" data-logbook-target="claim-1-current"><strong>Exact double-chain rates</strong><em>Claims 1–2</em> use exact conditional moments, held-out η gates, explicit mixing, and n=1000,d=100 checks.<span class="pill">i.i.d. / Markov ↗</span></a>
+    <a class="card" data-logbook-target="claim-3-current"><strong>Theorem dependencies</strong><em>Claims 3–5</em> preserve implicit-dimension caveats, distinct condition definitions, and the conditional η′ substitution.<span class="pill">Source-bound audit ↗</span></a>
+    <a class="card" data-logbook-target="claim-6-current"><strong>Exact half-factor chain</strong><em>Claim 6</em> checks every algebraic step, 48 deterministic systems, and a stronger false control.<span class="pill">η1 ≥ η3/2 ↗</span></a>
+  </section>
+  <div class="foot">OpenReview omkG80XURl · arXiv 2605.02103 · exact moments · six independent checkers · fixed seeds 0–63 · local Apple CPU.</div>
+</main>
+</body>
+</html>
