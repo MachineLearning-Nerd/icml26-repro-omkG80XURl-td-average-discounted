@@ -29,6 +29,7 @@
 ## Cleanup record
 
 The mapping is intentionally explicit so old names remain understandable in
-the provenance record even after the old remote refs are deleted. The final
-remote branch count, default branch, legacy-ref absence, and reachable commit
-identities are recorded here after the GitHub migration is verified.
+the provenance record after the old remote refs were deleted. On 2026-08-14,
+the GitHub remote was verified with default branch main, exactly 11 public
+branches, no master or orx/* refs, and MachineLearning-Nerd as the only
+reachable commit identity across the final local branches.
