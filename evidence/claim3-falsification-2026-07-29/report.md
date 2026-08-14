@@ -108,7 +108,7 @@ source audit, checker outputs, environment, seeds, and manifests are under
 `.openresearch/artifacts/claim3_falsification_2026_07_29/`.
 
 The scientific branch is
-[`orx/claim-3-falsification-audit-with-controlled-dime`](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-audit-with-controlled-dime).
+[`audit/claim3-feasibility`](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/tree/audit%2Fclaim3-feasibility).
 
 ## Assessment
 

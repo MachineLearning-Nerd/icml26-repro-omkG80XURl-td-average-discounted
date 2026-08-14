@@ -15,7 +15,7 @@ orx projects --json
 orx runs fa98c879-0e5c-4ae2-beef-51ebf9c50f43
 orx exp status b1af4599-5a9d-4aa1-8a54-32b1fb80d9cd
 orx paper 2605.02103 --full
-curl --fail --location --user-agent 'OpenResearch-Reproduction/1.0 (claim audit; contact via github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted)' https://arxiv.org/html/2605.02103
+curl --fail --location --user-agent 'OpenResearch-Reproduction/1.0 (claim audit; contact via github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning)' https://arxiv.org/html/2605.02103
 hf spaces info sabaridsnfuji/repro-bridging-the-gap-between-average-and-discounted-td-learning --expand sha --format json
 hf download sabaridsnfuji/repro-bridging-the-gap-between-average-and-discounted-td-learning --repo-type space
 hf download DineshAI/omkG80XURl --repo-type space --revision cb04bc356fb2ea3641f65cc9bbd06a299b5980b2
