@@ -153,11 +153,11 @@ internally. Its Git SHA is
 
 Important lineage:
 
-- [locked judged baseline](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fbaseline-judged-toy-verifier-in-locked-uv-enviro)
-- [held-out exact-moment route](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Ffreeze-exact-evidence-and-stress-asymptotic-iid)
-- [failed Eq. 17 target oracle](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Factual-single-chain-and-matched-prior-rate-contr)
-- [corrected Eq. 17 route](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fcorrect-projected-root-for-eq17-common-regime-sw)
-- [winning dependency and paper-scale route](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fsymbolic-theorem-4-4-chain-and-paper-scale-check)
+- [locked judged baseline](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/tree/baseline%2Fjudged-toy)
+- [held-out exact-moment route](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/tree/research%2Fheld-out-rates)
+- [failed Eq. 17 target oracle](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/tree/audit%2Fsingle-chain-eq17)
+- [corrected Eq. 17 route](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/tree/audit%2Fprojected-root)
+- [winning dependency and paper-scale route](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/tree/research%2Fpaper-scale)
 
 The [publication approval report](release_report.md) gives the score forecast,
 confidence assessment, protected-Space subset check, and exact release action.

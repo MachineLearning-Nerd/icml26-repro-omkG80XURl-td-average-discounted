@@ -38,4 +38,4 @@ the exact source dependency graph, not an overfit empirical exponent.
 - [Method](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_5/method.md), [limitations](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_5/limitations.md), and [summary](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_5/summary.json)
 
 Rerun all claims with `uv run --frozen python repro/src/verify_td.py` from the
-[public repository](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted).
+[public repository](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning).

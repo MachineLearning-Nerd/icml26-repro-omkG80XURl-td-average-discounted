@@ -47,7 +47,8 @@ The stacked tree is:
 `baseline → exact moments → held-out stress → actual Eq. 17 → corrected root → dependency graph + paper scale → release candidate`
 
 The winning scientific branch is
-`orx/symbolic-theorem-4-4-chain-and-paper-scale-check` at
+`research/paper-scale` (historically
+`orx/symbolic-theorem-4-4-chain-and-paper-scale-check`) at
 `fcf047187bc0139da0c20ed254458f6b35efa99e`. Its cumulative local-CPU run
 completed in 3m15s (189.775s measured internally), and all six claim verifiers
 plus the independent checker returned success. Formal compute cost was **$0**:
@@ -88,6 +89,7 @@ The 123 allowlisted text paths were published through Hugging Face’s
 `create_commit` API to the existing Space `DineshAI/omkG80XURl`. An exact
 revision download contained 139 files and matched the approved candidate
 byte-for-byte. The reader-facing artifacts were then fast-forwarded to the
-repository’s `master` branch without rewriting experiment history. The release
+repository’s historical `master` branch, now named `main`, without rewriting
+experiment history. The release
 node is marked `PUBLISHED / AWAITING_JUDGE`. No second Space was created, and
 the live score remains 5/12 until a new judge verdict exists.

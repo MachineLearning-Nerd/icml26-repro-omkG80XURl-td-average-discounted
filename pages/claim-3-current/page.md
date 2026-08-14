@@ -1,44 +1,32 @@
 # Claim 3 — no explicit dimension term in the decaying-step bound
 
-## Literal claim and outcome
+## Literal claim
 
-The generated claim says Theorem 4.3's decaying-stepsize convergence guarantee
-has no **explicit** dimension-dependent term. It does not say dimension cannot
-enter implicitly through `η`, mixing, or parameter norms.
+The generated claim says the Theorem 4.3 decaying-stepsize guarantee has no
+free explicit dimension-dependent term. It does not say that numerical error
+cannot depend on dimension through eta, mixing, or parameter norms.
 
-**Local evidence verdict for the literal claim: VERIFIED.** The exact free
-symbols in both main-theorem branches and the full Appendix Theorem D.1 are:
+## Local result
 
-| Formula | Audited free symbols |
-| --- | --- |
-| `ξ=1` | `T, τ_mix, c0, a, η, ||θ0||, ||θ*||, r_max` |
-| `0<ξ<1` | the same symbols plus `ξ` |
-| Appendix D.1 | the above plus `C, β` |
+The audited free-symbol sets for the two main-theorem forms and Appendix D.1
+contain no free d. An injected explicit-d dependency is detected, and the
+same schedule remains finite at the paper-scale dimensions, including
+n=1000,d=100.
 
-No formula contains a free `d`. An injected explicit-`d` dependency is
-detected and rejected. The same schedule remains finite and convergent at
-`d=5,20,100`, including `n=1000,d=100`; this scale sweep is a consistency
-check, not the reason the syntactic claim is verified.
+## Focused falsification result: BLOCKED
 
-## Independent falsification attempt
+The peer endpoint eta1=0.443 at d=40 violates the normalized-feature upper
+bound eta1 <= 3/d = 0.075. The peer page does not provide the raw inputs
+needed to instantiate Theorem D.1. The independent admissible family has
+eta1=1/d exactly, so its dimension trend cannot isolate a forbidden free
+dimension factor.
 
-The later counterexample audit remains **BLOCKED — no assumption-valid
-falsification was established**. A peer endpoint `η1=0.443,d=40` violates the
-paper's normalized-feature upper bound `η1≤3/d=0.075` by 5.91×. In the
-independent admissible 64-seed family, `η1=1/d` exactly, so a dimension trend
-cannot be separated from the theorem's allowed condition-number dependence.
-This negative result does not prove the universal theorem; it prevents an
-invalid counterexample from being mislabeled as a falsification.
+This is a blocked audit, not a falsification of the paper and not a universal
+proof of the theorem.
 
-## Direct evidence
+Evidence:
 
-- [Theorem 4.3 source audit](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/source_audit.md)
-- [Raw formula dependency sets](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/raw_formula_dependencies.json)
-- [Injected-d dependency set](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/negative_control_formula_dependencies.json)
-- [Paper-scale raw CSV](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/raw_paper_scale.csv)
-- [Independent checker source](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/independent_checker.py) and [output](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/independent_checker_output.txt)
-- [Verifier source](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/verifier.py) and [injected-failure output](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/rigorous-2026-07-23/claim_3/negative_control_output.txt)
-- [Focused falsification evaluation](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/claim3-falsification-2026-07-29/EVAL.md), [raw feasibility check](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/claim3-falsification-2026-07-29/raw_peer_trace_bound.csv), [controlled sweep](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/claim3-falsification-2026-07-29/raw_controlled_dimension_sweep.csv), and [verdict](https://huggingface.co/spaces/DineshAI/omkG80XURl/blob/main/evidence/claim3-falsification-2026-07-29/verdict.json)
-
-Rerun all claims with `uv run --frozen python repro/src/verify_td.py` from the
-[public repository](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted).
+- [Literal Claim 3 contract](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/blob/main/.openresearch/artifacts/winning_run/claim_3/summary.json)
+- [Focused audit verdict](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/blob/main/evidence/claim3-falsification-2026-07-29/verdict.json)
+- [Focused audit report](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning/blob/main/evidence/claim3-falsification-2026-07-29/report.md)
+- [Root claim ledger](https://github.com/MachineLearning-Nerd/icml26-average-discounted-td-learning#claim-ledger)

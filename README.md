@@ -1,89 +1,176 @@
-# Focused Claim 3 falsification campaign
+# ICML 2026 reproduction: Average and discounted TD learning
 
-[![Open Claim 3 audit in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/blob/master/notebooks/claim3_falsification.py)
+This repository audits the paper **“Bridging the Gap Between Average and
+Discounted TD Learning”** for the ICML 2026 reproduction competition.
 
-We independently tested whether Claim 3 of **Bridging the Gap Between Average
-and Discounted TD Learning** can be falsified by the reported \(d^2\)
-hitting-time effect. The peer number was a \(d\)-exponent of **2.015**
-(\(R^2=0.994\)); our assumption-valid reconstruction observed **0.183**
-across \(d=\{5,10,20,40\}\), using 64 fixed seeds.
+The audit is currently **VERIFIED_SCOPED**: all six local claim contracts pass
+with independent checkers and negative controls, but the evidence uses
+controlled families, theorem-dependency audits, and documented paper-scale
+substitutes. It is not a universal proof of every theorem instance. The
+focused Claim 3 falsification attempt is **BLOCKED**, not a falsification.
 
-**Falsification status: BLOCKED.** The peer page publishes no executable
-artifacts, and its \(\eta_1=0.443\) at \(d=40\) violates the
-normalized-feature consequence \(\eta_1\le3/d=0.075\) by 5.91×. In our
-admissible family, \(\eta_1=1/d\) exactly, so dimension and allowed
-condition-number dependence cannot be identified separately. The current
-judged Claim 3 verdict remains `TOY`; no score change is claimed.
+## Paper
 
-The reconstruction substitutes a controlled uniform Markov chain because the
-peer transition, reward, features, and seeds were unavailable. The formal run
-used Hugging Face `cpu-upgrade` for 3m32s, CPython 3.12.11 and NumPy 2.2.6,
-with no GPU.
+- **Title:** Bridging the Gap Between Average and Discounted TD Learning
+- **Authors:** Haoxing Tian, Zaiwei Chen, Ioannis Ch. Paschalidis, and Alex Olshevsky
+- **arXiv:** [2605.02103](https://arxiv.org/abs/2605.02103)
+- **OpenReview identifier:** omkG80XURl
+- **Competition:** ICML 2026 reproduction
+- **Repository owner:** [MachineLearning-Nerd](https://github.com/MachineLearning-Nerd)
 
-- [Illustrated Claim 3 falsification report](reports/claim3-falsification/report.md)
-- [Self-contained Claim 3 marimo notebook](notebooks/claim3_falsification.py)
-- [Machine-readable Claim 3 evidence](.openresearch/artifacts/claim3_falsification_2026_07_29)
-- [Earlier six-claim reproduction report](reports/rigorous-reproduction/report.md)
+The paper studies average-reward temporal-difference learning, where the
+Bellman operator is not an ordinary contraction. Its main construction uses
+two independent Markov trajectories to estimate the mean-feature correction.
+The paper claims quadratic condition-number dependence for the double-chain
+method, compared with the quartic dependence associated with a prior
+single-chain route.
 
-## Focused experiment log
+## Status at a glance
 
-| Branch / experiment | Purpose or change | Exact run command | Assessment / outcome | Compute |
-|---|---|---|---|---|
-| `master` | Publication surface | Not run as an experiment (publication surface) | README, report, notebook, and release manifests | — |
-| [Claim 3 falsification audit](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-audit-with-controlled-dime) | Exact source audit, normalization proof, 64-seed controlled dimension sweep, negative control | `uv run --frozen python repro/src/verify_td.py` | `BLOCKED`; current `TOY` verdict preserved; all cumulative regressions pass | Hugging Face `cpu-upgrade`, 3m32s, no GPU |
-| [Claim 3 release child](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fclaim-3-falsification-blocked-release) | Additive Space candidate, preservation suite, report, and notebook | `uv run --frozen python repro/src/verify_td.py` | All cumulative checks pass; focused falsification remains `BLOCKED` | Hugging Face `cpu-upgrade`, 3m37s, no GPU |
+| Area | Status | Meaning |
+| --- | --- | --- |
+| Local evidence release gate | PASSED | The six claim artifacts, independent checks, controls, and reports are present. |
+| Claims 1–6 | VERIFIED_SCOPED | Each declared finite/moment/theorem-dependency contract passes. |
+| Claim 3 focused falsification | BLOCKED | The peer endpoint is outside the normalized-feature domain and no fully instantiated bound violation was established. |
+| Strict universal paper-claim gate | NOT_READY | Learned policy matrices and some theorem constants are unavailable; conditional claims remain conditional. |
+| External publication | AWAITING_JUDGE | A new judge verdict is not available. No score increase is claimed. |
 
----
+The historical judged record is inconsistent across preserved logbook pages:
+the rigorous release records 5/12, while a later visibility page reports 6/12
+for a preserved revision. This repository therefore reports the conservative
+prior record as 5/12 and makes no new score claim until the external judge
+evaluates a published revision.
 
-# Rigorous reproduction: six TD-learning claims
+## Claim ledger
 
-[![Open in molab](https://marimo.io/molab-shield.svg)](https://molab.marimo.io/github/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/blob/master/notebooks/td_rate_reproduction.py)
+Each row states what was tested, how the result was produced, and where the
+machine-readable evidence lives. VERIFIED_SCOPED means that the stated
+contract passed; it does not remove the assumptions listed in the paper or in
+the evidence files.
 
-This project reproduces the six theoretical claims in
-**Bridging the Gap Between Average and Discounted TD Learning**
-([arXiv 2605.02103](https://arxiv.org/abs/2605.02103)). The central test is the
-double-chain sample-complexity rate: the paper predicts
-\(\widetilde O(\epsilon^{-1}\eta^{-2})\); exact moments give a \(T\) exponent
-of **−1.003** under i.i.d. sampling and, after retaining the explicit mixing
-factor, **−1.214 in \(T\)** and **−2.005 in \(\eta\)** under Markov sampling.
+| Claim | Paper statement | How the result is produced | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| C1 | i.i.d. double-chain last-iterate sample complexity is \(\widetilde O(\epsilon^{-1}\eta^{-2})\). | repro/src/exact_moments.py propagates first and second moments through a controlled two-state family; repro/src/rigorous_campaign.py fits the T rate, holds out smaller eta, and runs the paper-scale check. | [.openresearch/artifacts/winning_run/claim_1/summary.json](.openresearch/artifacts/winning_run/claim_1/summary.json), [claim_1/EVAL.md](.openresearch/artifacts/winning_run/claim_1/EVAL.md) | VERIFIED_SCOPED |
+| C2 | Two independent stationary Markov chains retain the rate with the explicit mixing factor. | A conditional-state moment operator evaluates the two-chain Markov process; the checker retains tau_mix, fits per-eta slopes, and checks a paper-scale control. | [.openresearch/artifacts/winning_run/claim_2/summary.json](.openresearch/artifacts/winning_run/claim_2/summary.json), [claim_2/EVAL.md](.openresearch/artifacts/winning_run/claim_2/EVAL.md) | VERIFIED_SCOPED |
+| C3 | The decaying-step convergence bound has no free explicit d term. | Theorem 4.3 and Appendix D.1 symbol sets are audited; an injected-d negative control must be detected; a fixed schedule is checked at paper-scale dimensions. A separate falsification campaign checks normalization feasibility and a controlled family. | [.openresearch/artifacts/winning_run/claim_3/summary.json](.openresearch/artifacts/winning_run/claim_3/summary.json), [claim3-falsification-2026-07-29/verdict.json](evidence/claim3-falsification-2026-07-29/verdict.json) | VERIFIED_SCOPED; falsification BLOCKED |
+| C4 | The proposed average-reward bound is quadratic in its condition quantity, versus a prior quartic average-reward bound and quadratic discounted-TD bound. | The proposed held-out envelope is measured; independently pinned primary-source audits recover the published powers without collapsing distinct condition-number definitions. | [.openresearch/artifacts/winning_run/claim_4/summary.json](.openresearch/artifacts/winning_run/claim_4/summary.json), [claim_4/source_audit.md](.openresearch/artifacts/winning_run/claim_4/source_audit.md) | VERIFIED_SCOPED |
+| C5 | The single-chain bound is \(\widetilde O((\eta'\eta^3T)^{-1})\), becoming quartic only when \(\eta'=\Theta(\eta)\). | repro/src/single_chain.py checks the projected Eq. 17 route; an independent dependency graph derives eta-prime inverse eta-cubed T-inverse and performs the conditional substitution. The empirical sweep is explicitly marked non-identifying. | [.openresearch/artifacts/winning_run/claim_5/summary.json](.openresearch/artifacts/winning_run/claim_5/summary.json), [raw_theorem44_dependency_graph.json](.openresearch/artifacts/winning_run/claim_5/raw_theorem44_dependency_graph.json) | VERIFIED_CONDITIONAL |
+| C6 | \(\eta_1\geq\eta_3/2\) under the paper’s half-scaled Dirichlet seminorm. | Proof steps are audited algebraically and stress-tested over 48 deterministic chain/feature cases; the stronger 1.1 eta3 statement is used as a negative control. | [.openresearch/artifacts/winning_run/claim_6/summary.json](.openresearch/artifacts/winning_run/claim_6/summary.json), [raw_proof_steps.json](.openresearch/artifacts/winning_run/claim_6/raw_proof_steps.json) | VERIFIED_SCOPED |
 
-All six local claim contracts currently report `VERIFIED`, with independent
-checkers and failing negative controls. That is a reproduction assessment, not
-a judge score: the live score remains **5/12** until the external judge
-evaluates a new Hugging Face revision.
+The authoritative cumulative run is
+[campaign_summary.json](.openresearch/artifacts/winning_run/campaign_summary.json).
+The historical [outputs/verdict.json](outputs/verdict.json) is retained as a
+toy baseline snapshot and must not be read as the current scientific verdict.
 
-The additive evidence release is published on the existing
-[Hugging Face Space](https://huggingface.co/spaces/DineshAI/omkG80XURl/tree/cb04bc356fb2ea3641f65cc9bbd06a299b5980b2)
-at revision `cb04bc356fb2ea3641f65cc9bbd06a299b5980b2` and is awaiting a new
-judge verdict.
+## Claim 3: why the falsification is blocked
 
-The exact-rate route uses a controlled two-state family so moments can be
-propagated without Monte Carlo noise. External validity is checked separately
-at the paper’s \((n,d)=(50,5),(100,20),(1000,100)\) dimensions and 150,000-step
-schedule. The learned Random-Walk policy matrices were not published, so these
-scale runs substitute a documented ergodic cycle with 0.10 teleportation. All
-formal runs used local CPU; no GPU or Hugging Face compute was used.
+The literal Claim 3 contract is syntactic: the audited theorem forms contain
+no free dimension symbol d. The focused audit does not claim that this proves
+dimension-uniform numerical error.
 
-- [Illustrated technical report](reports/rigorous-reproduction/report.md)
-- [Publication approval report](reports/rigorous-reproduction/release_report.md)
-- [Formal command ledger](reports/rigorous-reproduction/command_ledger.md)
-- [Self-contained tutorial notebook](notebooks/td_rate_reproduction.py)
-- [Frozen machine-readable winning evidence](.openresearch/artifacts/winning_run)
+The peer endpoint reports eta1 = 0.443 at d = 40, but normalized features
+imply eta1 <= 3/d = 0.075. The peer page does not provide the feature matrix,
+transitions, rewards, seeds, mixing constants, or a fully instantiated Theorem
+D.1 right-hand side. The independent admissible family has eta1 = 1/d
+exactly, so its dimension trend cannot identify a free dimension effect
+separately from the allowed condition-number dependence. The verifier
+therefore returns BLOCKED; it does not label the paper falsified.
 
-## Experiment log
+See the complete [Claim 3 report](evidence/claim3-falsification-2026-07-29/report.md),
+[claim contract](evidence/claim3-falsification-2026-07-29/claim_contract.json),
+[raw feasibility audit](evidence/claim3-falsification-2026-07-29/raw_peer_trace_bound.csv),
+and [verdict](evidence/claim3-falsification-2026-07-29/verdict.json).
 
-Every formal node inherits the exact command shown below; variants live in
-committed code rather than command-line knobs.
+## Branch map
 
-| Branch / experiment | Purpose or change | Exact run command | Assessment / outcome | Compute |
-|---|---|---|---|---|
-| `master` | Publication surface | Not run as an experiment (publication surface) | Published README, report, notebook, and exact release manifest; awaiting judge | — |
-| [locked judged baseline](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fbaseline-judged-toy-verifier-in-locked-uv-enviro) | Reproduce the judged toy checks in the locked uv environment | `uv run --frozen python repro/src/verify_td.py` | Reproduced the existing weak checks; retained only as regression evidence | local CPU, 15 s |
-| [held-out exact moments](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Ffreeze-exact-evidence-and-stress-asymptotic-iid) | Exact i.i.d./Markov moments and held-out \(\eta\) envelope | `uv run --frozen python repro/src/verify_td.py` | Claims 1, 2, 3, and 6 verified on their contracts; 4–5 still blocked | local CPU, 30 s |
-| [failed Eq. 17 oracle](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Factual-single-chain-and-matched-prior-rate-contr) | First actual single-chain implementation | `uv run --frozen python repro/src/verify_td.py` | Correctly blocked: verifier used 1 instead of the projected root \(1/3\); preserved to explain the repair | local CPU, 1 m 45 s |
-| [winning scientific node](https://github.com/MachineLearning-Nerd/icml26-repro-omkG80XURl-td-average-discounted/tree/orx%2Fsymbolic-theorem-4-4-chain-and-paper-scale-check) | Correct Eq. 17 root, theorem dependency graph, primary-source audit, and paper-scale checks | `uv run --frozen python repro/src/verify_td.py` | All six cumulative contracts verified; independent checkers returned zero | local CPU, 3 m 15 s |
+The public branch names describe the purpose of each experiment. The
+Historical source column records the original competition/orx name for
+provenance; the old refs are removed during the repository cleanup.
 
----
+| Final branch | Historical source | Purpose |
+| --- | --- | --- |
+| main | master | Publication surface, reports, claim ledger, and release metadata. |
+| baseline/judged-toy | orx/baseline-judged-toy-verifier-in-locked-uv-enviro | Reproduce the original weak toy checks in the locked environment. |
+| research/exact-moments | orx/exact-moment-contracts-on-controlled-chain-famil | Establish exact i.i.d. and Markov moment operators. |
+| research/held-out-rates | orx/freeze-exact-evidence-and-stress-asymptotic-iid | Freeze raw evidence and test held-out asymptotic rate envelopes. |
+| audit/single-chain-eq17 | orx/actual-single-chain-and-matched-prior-rate-contr | First single-chain Eq. 17 route; preserved because its target root was wrong. |
+| audit/projected-root | orx/correct-projected-root-for-eq17-common-regime-sw | Correct the projected root and rerun the common-regime sweep. |
+| research/paper-scale | orx/symbolic-theorem-4-4-chain-and-paper-scale-check | Theorem dependency graph, primary-source audit, and paper-scale checks. |
+| release/rigorous-candidate | orx/release-candidate-evidence-report-and-logbook | Package the six-claim evidence release and report. |
+| audit/claim3-feasibility | orx/claim-3-falsification-audit-with-controlled-dime | Audit Claim 3 assumptions, normalization, and controlled dimension behavior. |
+| release/claim3-blocked | orx/claim-3-falsification-blocked-release | Preserve the blocked falsification result and its release candidate. |
+| release/claim3-publication | orx/claim-3-final-publication-metadata | Record the published Claim 3 metadata and navigation. |
 
-# Repro — Bridging Average and Discounted TD Learning
-OpenReview `omkG80XURl`. arXiv `2605.02103`. 6 claims/12 pts. Owner: loop12pt.
+The branch cleanup is recorded in [BRANCH_AUDIT.md](BRANCH_AUDIT.md).
+
+## Reproduce
+
+The formal verifier uses the pinned environment:
+
+```bash
+uv sync --frozen
+uv run --frozen python repro/src/verify_td.py
+```
+
+The cumulative run takes about 190 seconds on the recorded local CPU
+environment. It uses exact moment propagation for the controlled rate
+experiments, deterministic paper-scale substitutes where the paper’s learned
+policy matrices are unavailable, independent checkers, and claim-specific
+negative controls.
+
+Start with:
+
+- [Rigorous reproduction report](reports/rigorous-reproduction/report.md)
+- [Release report](reports/rigorous-reproduction/release_report.md)
+- [Command ledger](reports/rigorous-reproduction/command_ledger.md)
+- [Claim 3 falsification report](evidence/claim3-falsification-2026-07-29/report.md)
+- [Source manifest](SOURCE_MANIFEST.md)
+- [Audit report](AUDIT_REPORT.md)
+- [Machine-readable gate](publication_gate.json)
+
+## Repository layout
+
+| Path | Role |
+| --- | --- |
+| repro/src/ | Reproduction algorithms, exact moments, claim verifiers, and checkers. |
+| .openresearch/artifacts/winning_run/ | Authoritative six-claim machine-readable evidence. |
+| evidence/claim3-falsification-2026-07-29/ | Focused Claim 3 feasibility/falsification audit. |
+| reports/ | Technical and publication-facing reports. |
+| notebooks/ | Self-contained tutorial and audit notebooks. |
+| outputs/ | Historical output snapshots with provenance notes. |
+| pages/ and logbook.json | The preserved publication/logbook surface. |
+| publication_gate.json and GATE_READY.md | Release status and scope gate. |
+
+## Limitations
+
+- The exact-rate experiments use controlled two-state families rather than a
+  universal worst-case search.
+- The paper’s learned Random-Walk policy matrices are not published, so
+  paper-scale runs use a documented ergodic cycle with 0.10 teleportation.
+- Claim 3’s theorem-symbol result permits implicit dependence through eta,
+  norms, and mixing; it is not a claim of dimension-free numerical error.
+- Claim 5’s quartic dependence is conditional on eta-prime = Theta(eta), and
+  the empirical route alone is non-identifying.
+- External judge results are not inferred from local checks.
+
+## Citation
+
+```bibtex
+@article{tian2026bridging,
+  title   = {Bridging the Gap Between Average and Discounted TD Learning},
+  author  = {Tian, Haoxing and Chen, Zaiwei and Paschalidis, Ioannis Ch. and Olshevsky, Alex},
+  journal = {arXiv preprint arXiv:2605.02103},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2605.02103}
+}
+```
+
+## Thank you
+
+Thank you to Haoxing Tian, Zaiwei Chen, Ioannis Ch. Paschalidis, and Alex
+Olshevsky for making the theoretical construction and its assumptions
+available for careful reproduction. Their paper provides a useful target for
+turning a small reproduction score into a transparent, claim-by-claim audit.
+
+This repository is maintained and attributed to
+[MachineLearning-Nerd](https://github.com/MachineLearning-Nerd).
